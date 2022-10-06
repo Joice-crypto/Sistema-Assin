@@ -1,0 +1,157 @@
+
+
+<link href="css/forms.css" rel="stylesheet">
+
+<section id="container">
+    <p> Cadastro de Mobilidade In - Estudante</p>
+
+    <form>
+        <div class="row">
+            <div class="col">
+                <label for="Nome"> Nome do Servidor </label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="Email"> Email </label>
+                <input type="email" class="form-control">
+            </div>
+            <div class="col">
+                <label for="matricula"> Matricula </label>
+                <input type="text" class="form-control" required>
+            </div>
+
+            <?php // AQUI VAI SER SE A PESSOA FOR UM PROFESSOR (fAZER IF COM O TWIG) ?>
+
+                <div class="col">
+                    <label for="Nome"> Curso </label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="Campus"> Campus </label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+            <div class="col">
+                <label for="InteressePesquisa"> Interesses de Pesquisa </label>
+                <input type="text" class="form-control">
+            </div>
+            <?php // AQUI VAI SER SE A PESSOA FOR UM TECNICO (fAZER IF COM O TWIG) ?>
+            <div class="row">
+                <div class="col">
+                <label for="setor"> Setor que trabalha </label>
+                <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                <label for="atuacao"> Area de atuação </label>
+                <input type="text" class="form-control">
+                  
+                </div>
+            </div>
+           
+
+            <div class="row">
+                <div class="col">
+                        <label for="cpf"> CPF </label>
+                        <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="Celular"> Celular </label>
+                    <input type="number" class="form-control" required>
+                </div>
+            </div>
+                
+                <div class="form-group">
+                    <label for="inputAddress">Endereço</label>
+                    <input type="text" class="form-control" id="inputAddress">
+                </div>
+            <div class="row">
+                    <div class="col">
+                    <label for=""> Nome do Familiar </label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for=""> Grau de Parentesco </label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="telefone Familiar"> Telefone do Familiar </label>
+                    <input type="number" class="form-control">
+                </div>
+                <div class="col">
+                    <label for=""> Email do Familiar </label>
+                    <input type="email" class="form-control">
+
+                </div>
+            </div>
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="InstitDestino">Instituição de Destino</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="PaisDestino">País da Instituição</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            
+            <div class="col">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Carta de Aceitação</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group col-md-4">
+                        <label for="Arquivo1"> Finalidade do Intercambio </label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class="col">
+                <div class="aux">
+                    <label for="Arquivo1"> Auxilio Financeiro </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Sim</label>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="tipoAux"> Tipo de Auxilio </label>
+                    <input type="text" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                        <label for="Arquivo1"> Data de Saida </label>
+                        <input type="date" class="form-control">
+                </div>
+                <div class="col">
+                        <label for="Arquivo1"> Data de Retorno </label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+            
+
+            <div class="butao">
+                <button type="button" class="btn btn-secondary btn-lg">Enviar</button>
+            </div>
+        </div>
+
+    </form>
+
+</section>
+
+<script src="/js/front.js"></script>
