@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/Estrutura.css" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>Sistema Assin</title>
+  </head>
+  <body>
+    <header>
+      <p id="titulo-principal">
+        ASSESSORIA PARA ASSUNTOS INTERNACIONAIS - ASSIN
+      </p>
+    </header>
+
+    <div class="menu-lateral" style="position: fixed;">
+      <div
+        class="flex-shrink-0 p-3"
+        style="width: 280px; height: 100vh; margin-top: 6.2em; background-color: #333333"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-3 link-light text-decoration-none border-bottom"
+        >
+          <svg class="bi pe-none me-2" width="30" height="24">
+            <use xlink:href="#"></use>
+          </svg>
+          <span class="fs-5 fw-semibold">MENU</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button
+              style="color: #ffff"
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#home-collapse"
+              aria-expanded="true"
+            >
+              Inicio
+            </button>
+          </li>
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              style="color: #ffff"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              aria-expanded="false"
+            >
+              Buscar
+            </button>
+          </li>
+
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              style="color: #ffff"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              aria-expanded="false"
+              id="mobOut"
+            >
+              Mobilidade out
+            </button>
+          </li>
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              style="color: #ffff"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              aria-expanded="false"
+            >
+              Mobilidade in
+            </button>
+          </li>
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              style="color: #ffff"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              id="AcordoInternacional"
+              aria-expanded="false"
+            >
+              Acordos Internacionais
+            </button>
+          </li>
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+              style="background-color: #ffff"
+              data-bs-toggle="collapse"
+              data-bs-target="#orders-collapse"
+              aria-expanded="false"
+            >
+              Formularios
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                  <a
+                    href="#"
+                    id="MobOutEstudante"
+                    class="link-light d-inline-flex text-decoration-none rounded"
+                    >Mobilidade out - Estudantes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="MobOutProfessor"
+                    class="link-light d-inline-flex text-decoration-none rounded"
+                    >Mobilidade out - Professores/Tecnicos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="MobInEstudante"
+                    class="link-light d-inline-flex text-decoration-none rounded"
+                    >Mobilidade in - Estudantes
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="MobInProfessor"
+                    class="link-light d-inline-flex text-decoration-none rounded"
+                    >Mobilidade in - Professores/Tecnicos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    id="AcordoInter"
+                    class="link-light d-inline-flex text-decoration-none rounded"
+                    >Acordos Internacionais</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="fluid">
+        
+      {{area_dinamica}}
+
+
+      
+    </div>
+    <div id="footer">
+        
+      {{footer}}
+
+
+      
+    </div>
+
+
+
+
+    <!-- <script src="/js/front.js"></script> -->
+    <script src="/js/front.js"></script>
+   
+    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>      
+    </script>
+    
+  </body>
+</html>

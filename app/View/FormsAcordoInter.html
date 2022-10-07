@@ -1,0 +1,133 @@
+
+
+<link href="css/forms.css" rel="stylesheet">
+
+<section id="container">
+    <p> Cadastro de Acordo Internacional</p>
+
+    <form method="post" action="?pagina=admin&metodo=insert">
+        <div class="row">
+            <div class="col">
+                <label for="Nome"> Nome da Instituição</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col">
+                <label for="Pais">País</label>
+                <input type="Pais" class="form-control">
+            </div>
+            <div class="col">
+                <label for="endereco">Endereço Completo </label>
+                <input type="text" class="form-control" required>
+            </div>
+                <div class="col">
+                    <label for="Continente"> Continente </label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <label for="NomeResp"> Nome do Responsavel </label>
+                <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                <label for="funcao"> Função </label>
+                <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                <label for="telefone"> Telefone </label>
+                <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                <label for="email"> Email </label>
+                <input type="text" class="form-control">
+            </div>
+           
+
+            <div class="row">
+                <div class="col">
+                        <label for="status"> Status </label>
+                        <input type="text" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="cobertura"> Area de Cobertura </label>
+                    <input type="text" class="form-control" required>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label for="inputAddress">Nome do Coordenador Do Acordo</label>
+                    <input type="text" class="form-control" id="inputAddress">
+                </div>
+
+                
+                <div class="row">
+                    <div class="col">
+                        <label for="InstitDestino">Instituição de Destino</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="PaisDestino">País da Instituição</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                        <label for="assinatura"> Data de Assinatura </label>
+                        <input type="date" class="form-control">
+                </div>
+                <div class="col">
+                        <label for="expiracao"> Data de Expiração </label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Carta de Aceitação</label>
+                    <input class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group col-md-4">
+                        <label for="Arquivo1">Periodo de Vigencia </label>
+                        <input type="date" class="form-control">
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                
+            </div>
+
+
+            <div class="col">
+                <div class="aux">
+                    <label for="Arquivo1"> Auxilio Financeiro </label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Sim</label>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Não</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <label for="tipoAux"> Tipo de Auxilio </label>
+                    <input type="text" class="form-control" required>
+                </div>
+            </div>
+
+           
+            
+
+            <div class="butao">
+                <button type="button" class="btn btn-secondary btn-lg">Enviar</button>
+            </div>
+        </div>
+
+    </form>
+
+</section>
+
+<script src="/js/front.js"></script>
