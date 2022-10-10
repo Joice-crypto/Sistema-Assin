@@ -4,6 +4,9 @@
 	{
 		public function index($params)
 		{
+
+
+
 			try {
 				$colecAcord = Acordos::selecionaPorId($params); // aqui vai aparecer todos os meus Acorods Internacionais
 

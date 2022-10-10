@@ -1,15 +1,16 @@
-
 <?php
 
+require_once("Core/core.php");
 
 
-class FormsController
-{
-    public function index()
-    {
+
+class Forms1Controller {
+
+    public function index(){
+
         $loader = new \Twig\Loader\FilesystemLoader('app/View');
         $twig = new \Twig\Environment($loader);
-        $template = $twig->load('FormsMobilidadeOutProf.html');
+        $template = $twig->load('FormsMobilidadeOutEst.html');
 
         $parametros = array();
         $parametros['nome'] = 'Joice';
@@ -17,7 +18,16 @@ class FormsController
        $conteudo =  $template->render($parametros);
 
        echo $conteudo;
+			
 
-    //     Postagem::selecionaTodos();
     }
+
+    public function createMobOutEstudante($StudentBrasilModel){
+
+    }
+
+
+
 }
+
+
