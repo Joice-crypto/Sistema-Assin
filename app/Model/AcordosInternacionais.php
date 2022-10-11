@@ -6,7 +6,7 @@ class Acordos
     public static function getAllAgreements(){ // PEGAR TODOS OS ACORDOS
         $con = Connection::getConn();
 
-        $sql = "SELECT * FROM AcordosInternacionais ORDER BY id DESC";
+        $sql = "SELECT * FROM AcordosInternacionais ORDER BY idAcordos DESC";
         $sql = $con->prepare($sql);
         $sql->execute();
 
@@ -24,19 +24,19 @@ class Acordos
 
     }
 
-    public static function selecionaPorId($idAcordo) // vai selecionar cada acordo por id 
+    public static function selecionaPorId($idPost) // vai selecionar cada acordo por id 
     {
         $con = Connection::getConn();
 
         $sql = "SELECT * FROM AcordosInternacionais WHERE idAcordos = :idAcordo";
         $sql = $con->prepare($sql);
-        $sql->bindValue(':idAcordo', $idAcordo, PDO::PARAM_INT);
+        $sql->bindValue(':idAcordo', $idPost, PDO::PARAM_INT);
         $sql->execute();
 
-        $resultado = $sql->fetchObject('AcordosInternacionais');
+        $resultado = $sql->fetchObject('Acordos');
 
         if (!$resultado) {
-            throw new Exception("Não foi encontrado nenhum registro no banco");	
+            throw new Exception("Não foi encontrado nenhum registro no banco de dados");	
         } else {
             $resultado = $resultado->id;
         }

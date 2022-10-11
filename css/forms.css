@@ -41,15 +41,13 @@ body { overflow-x: hidden;
 .card  {
 
     width: 85em;
-    right: 12px;
+   
 }
+
 
 #container{
 
-    display: inline-block;
-    margin-left: 20rem;
-    margin-top: 120px;  
-
+    margin: 10px;
 }
 #container p{
 

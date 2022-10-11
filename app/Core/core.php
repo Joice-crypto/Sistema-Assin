@@ -23,13 +23,13 @@ class Core
 			}
 
 
-			if (isset($urlGet['id']) && $urlGet['id'] != null) {
-				$id = $urlGet['id'];
+			if (isset($urlGet['idAcordos']) && $urlGet['idAcordos'] != null) {
+				$id = $urlGet['idAcordos']; // passando o id da minha url como parametro se ela nao tem parametro então id é null
 			} else {
 				$id = null;
 			}
 
-			call_user_func_array(array(new $controller, $acao), array());
+			call_user_func(array(new $controller, $acao), $id); 
 			
 
 			
