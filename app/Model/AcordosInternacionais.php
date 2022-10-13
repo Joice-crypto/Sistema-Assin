@@ -28,18 +28,21 @@ class Acordos
     {
         $con = Connection::getConn();
 
-        $sql = "SELECT * FROM AcordosInternacionais WHERE idAcordos = :idAcordo";
-        $sql = $con->prepare($sql);
-        $sql->bindValue(':idAcordo', $idPost, PDO::PARAM_INT);
-        $sql->execute();
+			$sql = "SELECT * FROM AcordosInternacionais WHERE idAcordos = :idAcordos";
+			$sql = $con->prepare($sql);
+			$sql->bindValue(':idAcordos', $idPost, PDO::PARAM_INT);
+			$sql->execute();
 
-        $resultado = $sql->fetchObject('Acordos');
+			$resultado = $sql->fetchObject('Acordos');
 
-        if (!$resultado) {
-            throw new Exception("Não foi encontrado nenhum registro no banco de dados");	
-        } else {
-            $resultado = $resultado->id;
-        }
+			if (!$resultado) {
+				throw new Exception("Não foi encontrado nenhum registro no banco");	
+			} else {
+				$resultado;
+			}
+
+			return $resultado;
+
 
         return $resultado;
     }

@@ -4,7 +4,7 @@ class getAcordoController {
 
     public function index($params){
 
-        
+       
         
         try {
             $acordo = Acordos::selecionaPorId($params); // aqui vai aparecer um acordo selecionado por ID 
@@ -15,6 +15,7 @@ class getAcordoController {
             $template = $twig->load('GetAcordo.html');
     
             $parametros = array();
+            
             $parametros['idAcordos'] = $acordo->idAcordos;
             $parametros['NomeInstituicao'] = $acordo->NomeInstituicao;
             $parametros['PaisInstituicao'] = $acordo->PaisInstituicao;
@@ -34,7 +35,7 @@ class getAcordoController {
             $parametros['atividadesPrevistas']= $acordo->atividadesPrevistas;
             $parametros['publicoAlvo']= $acordo->publicoAlvo;
             $parametros['AcordosInternacionaisResFK']= $acordo->AcordosInternacionaisResFK;
-            
+        //   var_dump($parametros);
     
             $conteudo = $template->render($parametros);
             echo $conteudo;		

@@ -16,28 +16,14 @@
     <!-- Bootstrap core CSS-->
         <div id="container">
 
-    <div id="barra-pesquisa">    
-    <nav class="navbar navbar-expand-lg">
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <form class="form-inline my-2 my-lg-0">
-          <span>Nome Do Acordo</span>
-          <input class="form-control mr-sm-2" type="search">
-          <span>Pais</span>
-          <input class="form-control mr-sm-2" type="search">
-          <span>Data de Assinatura</span>
-          <input class="form-control mr-sm-2" type="date">
-          <button class="btn btn-dark" type="submit">Pesquisar</button>
-        </form>
-      </div>
-    </nav>
-    </div>
-
         <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
-              
-            
+
             <div class="card-body">
+            </div>
+            <button type="button" onclick="" class="btn btn-primary w-100 mb-3">Criar Acordo</button>
+            <div id="Alerts"></div>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
@@ -47,16 +33,17 @@
                       <th>Continente</th>
                       <th>Data de Assinatura</th>
                       <th>Data de Expiração</th>
-                      <th>Controles</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   {% for acord in Acordos %} 
                   <tbody>
-                    <td><a href="http://localhost:8000/?pagina=acordo&idAcordos={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
+                    <td><a href="http://localhost:8000/?pagina=GetAcordo&idAcordos={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
                     <td>{{acord.PaisInstituicao}}</td>
                     <td>{{acord.Continente}}</td>
                     <td>{{acord.dataAssinatura}}</td>
                     <td>{{acord.dataExpiracao}}</td>
+                    <td>{{acord.AcStatus}}</td>
                   </tbody>
                   {% endfor %}
                 </table>
