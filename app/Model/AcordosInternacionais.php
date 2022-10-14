@@ -55,9 +55,10 @@ class Acordos
 			if (!isset($dadosPost['NomeInstituicao']) or !isset($dadosPost['PaisInstituicao']) or !isset($dadosPost['EnderecoInst']) or !isset($dadosPost['Continente'])
             or !isset($dadosPost['AcStatus']) or !isset($dadosPost['AreaDeCoberturaAcordo']) or !isset($dadosPost['NomeCoordenador']) or !isset($dadosPost['dataAssinatura'])
             or !isset($dadosPost['dataExpiracao']) or !isset($dadosPost['periodoVigencia']) or !isset($dadosPost['numeroDoProcesso']) or !isset($dadosPost['TermosAditivos'])
-            or !isset($dadosPost['StatusRenovacao'])  or !isset($dadosPost['DOU'])  or !isset($dadosPost[':dataRenocavao']) or !isset($dadosPost[':atividadesPrevistas']) or
-            !isset($dadosPost['publicoAlvo']) or  !isset($dadosPost['AcordosInternacionaisResFK']) ) { // tem que preencher todos os campos
-				throw new Exception("Preencha todos os campos");
+            or !isset($dadosPost['StatusRenovacao'])  or !isset($dadosPost['DOU'])  or !isset($dadosPost['dataRenocavao']) or !isset($dadosPost['atividadesPrevistas']) or
+            !isset($dadosPost['publicoAlvo'])) // tem que preencher todos os campo 
+            { 
+            	throw new Exception("Preencha todos os campos");
 
 				return false;
 			}
@@ -66,9 +67,8 @@ class Acordos
 
 			$sql = $con->prepare('INSERT INTO AcordosInternacionais (NomeInstituicao, PaisInstituicao,EnderecoInst,Continente,AcStatus,AreaDeCoberturaAcordo,
             NomeCoordenador,dataAssinatura,dataExpiracao,periodoVigencia,numeroDoProcesso,TermosAditivos,StatusRenovacao,DOU,dataRenocavao,atividadesPrevistas,
-            publicoAlvo,AcordosInternacionaisResFK) VALUES (:NomeInstituicao, :PaisInstituicao,:EnderecoInst,:Continente,:AcStatus,:AreaDeCoberturaAcordo,:NomeCoordenador
-            :dataAssinatura,:dataExpiraçao,:periodoVigencia,:numeroDoProcesso,:TermosAditivos,:StatusRenovacao,:DOU,:dataRenocavao,:atividadesPrevistas,:publicoAlvo,
-            :AcordosInternacionaisResFK)'); 
+            publicoAlvo,AcordosInternacionaisResFK) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'); 
+
 			$sql->bindValue(':NomeInstituicao', $dadosPost['NomeInstituicao']);
             $sql->bindValue(':PaisInstituicao', $dadosPost['PaisInstituicao']);
             $sql->bindValue(':EnderecoInst', $dadosPost['EnderecoInst']);
@@ -77,7 +77,7 @@ class Acordos
             $sql->bindValue(':AreaDeCoberturaAcordo', $dadosPost['AreaDeCoberturaAcordo']);
             $sql->bindValue(':NomeCoordenador', $dadosPost['NomeCoordenador']);
             $sql->bindValue(':dataAssinatura', $dadosPost['dataAssinatura']);
-            $sql->bindValue(':dataExpiraçao', $dadosPost['dataExpiraçao']);
+            $sql->bindValue(':dataExpiracao', $dadosPost['dataExpiracao']);
             $sql->bindValue(':periodoVigencia', $dadosPost['periodoVigencia']);
             $sql->bindValue(':numeroDoProcesso', $dadosPost['numeroDoProcesso']);
             $sql->bindValue(':TermosAditivos', $dadosPost['TermosAditivos']);
@@ -86,12 +86,13 @@ class Acordos
             $sql->bindValue(':dataRenocavao', $dadosPost['dataRenocavao']);
             $sql->bindValue(':atividadesPrevistas', $dadosPost['atividadesPrevistas']);
             $sql->bindValue(':publicoAlvo,', $dadosPost['publicoAlvo']);
-            $sql->bindValue(':AcordosInternacionaisResFK', $dadosPost['AcordosInternacionaisResFK']);
+            
              			
 			$res = $sql->execute();
 
 			if ($res == 0) {
-				throw new Exception("Falha ao inserir Acordo");
+				throw json_encode(array("status" => "failure", "message" => "Não foi possível cadastrar o Acordo."));
+                exit();
 
 				return false;
 			}
@@ -126,6 +127,7 @@ class Acordos
             $sql->bindValue(':publicoAlvo,', $params['publicoAlvo']);
             $sql->bindValue(':AcordosInternacionaisResFK', $params['AcordosInternacionaisResFK']);
 			$sql->bindValue(':idAcordos', $params['idAcordos']);
+
 			$resultado = $sql->execute();
 
 			if ($resultado == 0) {
