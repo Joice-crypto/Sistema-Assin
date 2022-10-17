@@ -14,9 +14,7 @@
     <form method="post" action="">
 
         <div class="row">
-
-       
-        
+ 
         <div class="row">
            
             <div class="col">
@@ -43,22 +41,22 @@
             <div class="row">
                 <div class="col">
                 <label for="NomeResp"> Nome do Responsavel </label>
-                <input type="text" readonly="true" value="{{AcordosInternacionaisResFK}}" class="form-control">
+                <input type="text" readonly="true" value="{{NomeResponsavel}}" class="form-control">
                 </div>
                 <div class="col">
                 <label for="funcao"> Função Responsavel </label>
-                <input type="text" readonly="true"  class="form-control">
+                <input type="text" readonly="true" value="{{FuncaoResponsavel}}"  class="form-control">
                 </div>
             </div>
             
             <div class="row">
                 <div class="col">
                 <label for="telefone"> Telefone Responsavel</label>
-                <input type="text" readonly="true" class="form-control">
+                <input type="text" readonly="true" value="{{TelefoneResponsavel}}" class="form-control">
                 </div>
                 <div class="col">
                 <label for="email"> Email Responsavel </label>
-                <input type="text" readonly="true" class="form-control">
+                <input type="text" readonly="true" value="{{ResponsavelEmail}}" class="form-control">
             </div>
             </div>
            
@@ -108,7 +106,7 @@
             <div class="row">
                 <div class="col">
                     <label for="formFile" class="form-label">Termos Aditivos</label>
-                    <input class="form-control" readonly="true" type="number" value="{{TermosAditivos}}" id="formFile">
+                    <input class="form-control" readonly="true" type="text" value="{{TermosAditivos}}" id="formFile">
                 </div>
             </div>
             <div class="row">

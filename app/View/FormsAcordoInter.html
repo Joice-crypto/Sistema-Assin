@@ -7,129 +7,124 @@
 
     <form method="post" action="?pagina=Acordos&metodo=insert">
        
-        <div class="row"> 
-            <div class="row">
-               
+        <div class="row">
+       
+        <div class="row">
+           
+            <div class="col">
+                <label for="Nome"> Nome da Instituição</label>
+                <input type="Pais" name="NomeInstituicao"  class="form-control" >       
+            </div>
+        
+            <div class="col">
+                <label for="Pais">País</label>
+                <input type="Pais" name="PaisInstituicao" class="form-control" >
+            </div>
+        
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="endereco">Endereço Completo </label>
+                <input type="text" name="EnderecoInst" class="form-control" >
+            </div>
                 <div class="col">
-                    <label for="Nome"> Nome da Instituição</label>
-                    <input type="text" name="NomeInstituicao"  class="form-control" >       
+                    <label for="Continente"> Continente </label>
+                    <input type="text" name="Continente" class="form-control">
                 </div>
-            
-                <div class="col">
-                    <label for="Pais">País</label>
-                    <input type="text" name="PaisInstituicao"   class="form-control" >
-                </div>
-            
             </div>
             <div class="row">
                 <div class="col">
-                    <label for="endereco">Endereço Completo </label>
-                    <input type="text" name="EnderecoInst"   class="form-control">
+                <label for="NomeResp"> Nome do Responsavel </label>
+                <input type="text" name="NomeResponsavel" class="form-control">
                 </div>
-                    <div class="col">
-                        <label for="Continente"> Continente </label>
-                        <input type="text" name="Continente"   class="form-control">
-                    </div>
+                <div class="col">
+                <label for="funcao"> Função Responsavel </label>
+                <input type="text" name="FuncaoResponsavel" class="form-control">
                 </div>
-                <div class="row">
-                    <!-- <div class="col">
-                    <label for="NomeResp"> Nome do Responsavel </label>
-                    <input type="text" name="responsavel"  class="form-control">
-                    </div>
-                    </div> -->
-
-                    <!-- <div class="col">
-                    <label for="funcao"> Função Responsavel </label>
-                    <input type="text" name="funResponsavel"   class="form-control">
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col">
-                    <label for="telefone"> Telefone Responsavel</label>
-                    <input type="text" name="telResponsavel"   class="form-control">
-                    </div>
-                    <div class="col">
-                    <label for="email"> Email Responsavel </label>
-                    <input type="email" name="emailResponsavel"  class="form-control">
-                </div>
-                </div> -->
-               
-                <div class="row">
-                    <div class="col">
-                            <label for="status"> Status </label>
-                            <input type="text" name="AcStatus" class="form-control">
-                    </div> 
-                    <div class="col">
-                        <label for="cobertura"> Area de Cobertura </label>
-                        <input type="text" name="AreaDeCoberturaAcordo"  class="form-control" >
-                    </div>
-                </div>
-               
-                <div class="row">
-                        <div class="col">
-                        <label for="inputAddress">Nome do Coordenador Do Acordo</label>
-                        <input type="text" name="NomeCoordenador"   class="form-control" id="inputAddress">
-                        </div>
-                        <div class="col">
-                            <label for="cobertura"> D.O.U </label>
-                            <input type="text" name="DOU"  class="form-control" required>
-                        </div>
-                    </div>
-    
-                    <div class="row">
-                        <div class="col">
-                            <label for="formFile" class="form-label">Numero do Processo</label>
-                            <input class="form-control"  type="text" name="numeroDoProcesso" id="formFile">
-                        </div>
-                        <div class="col">
-                            <label for="PaisDestino">Status de Renovação</label>
-                            <input type="text"  name="StatusRenovacao" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row">
-                    <div class="col">
-                            <label for="assinatura"> Data de Assinatura </label>
-                            <input type="date"  name="dataAssinatura" class="form-control">
-                    </div>
-                    <div class="col">
-                            <label for="expiracao"> Data de Expiração </label>
-                            <input type="date"  name="dataExpiracao" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="formFile" class="form-label">Termos Aditivos</label>
-                        <input class="form-control"  type="text" name="TermosAditivos" id="formFile">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="PaisDestino">Periodo de Vigencia</label>
-                        <input type="text"  name="periodoVigencia" class="form-control">
-                    </div>
-                    <div class="col">
-                        <label for="PaisDestino">Publico alvo</label>
-                        <input type="text"  name="publicoAlvo" class="form-control">
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col">
-                        <label for="formFile" class="form-label">Arividades Previstas</label>
-                        <input class="form-control"  type="text" name="atividadesPrevistas" id="formFile">
-                    </div>
-                    <div class="col">
-                        <label for="assinatura"> Data de Renovação </label>
-                        <input type="date"  name="dataRenocavao" class="form-control">
-                    </div>
-                </div>
-                
-                <div class="butao">
-                    <button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
-                  </div>
+            </div>
             
+            <div class="row">
+                <div class="col">
+                <label for="telefone"> Telefone Responsavel</label>
+                <input type="text" name="TelefoneResponsavel" class="form-control">
+                </div>
+                <div class="col">
+                <label for="email"> Email Responsavel </label>
+                <input type="text" name="ResponsavelEmail" class="form-control">
+            </div>
+            </div>
+           
+            <div class="row">
+                <div class="col">
+                        <label for="status"> Status </label>
+                        <input type="text" name="AcStatus" class="form-control">
+                </div> 
+                <div class="col">
+                    <label for="cobertura"> Area de Cobertura </label>
+                    <input type="text" name="AreaDeCoberturaAcordo"  class="form-control" >
+                </div>
+            </div>
+           
+            <div class="row">
+                    <div class="col">
+                    <label for="inputAddress">Nome do Coordenador Do Acordo</label>
+                    <input type="text" name="NomeCoordenador" class="form-control" id="inputAddress">
+                    </div>
+                    <div class="col">
+                        <label for="cobertura"> D.O.U </label>
+                        <input type="text" name="DOU" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="formFile" class="form-label">Numero do Processo</label>
+                        <input class="form-control" name="numeroDoProcesso"  type="number"  id="formFile">
+                    </div>
+                    <div class="col">
+                        <label for="PaisDestino">Status de Renovação</label>
+                        <input type="text" name="StatusRenovacao" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col">
+                        <label for="assinatura"> Data de Assinatura </label>
+                        <input type="date" name="dataAssinatura" class="form-control">
+                </div>
+                <div class="col">
+                        <label for="expiracao"> Data de Expiração </label>
+                        <input type="date" name="dataExpiracao" class="form-control">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="assinatura"> Data de Renovação </label>
+                    <input type="date" name="dataRenovacao" class="form-control">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="tAditivos" class="form-label">Termos Aditivos</label>
+                    <input class="form-control" name="TermosAditivos" type="text"  id="formFile">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="PaisDestino">Periodo de Vigencia</label>
+                    <input type="text" name="periodoVigencia" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="PaisDestino">Publico Alvo</label>
+                    <input type="text" name="publicoAlvo" class="form-control">
+                </div>
+            </div>
+            <div class="col">
+                <label for="PaisDestino">Atividades Previstas</label>
+                <input type="text" name="atividadesPrevistas" class="form-control">
+            </div>
+            
+
+            <div class="butao">
+                <button type="submit" class="btn btn-primary">ENVIAR</button>
             </div>
         </div>
         

@@ -38,7 +38,7 @@
                   </thead>
                   {% for acord in Acordos %} 
                   <tbody>
-                    <td><a href="http://localhost:8000/?pagina=GetAcordo&idAcordos={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
+                    <td><a href="http://localhost:8000/?pagina=Acordos&metodo=GetAcordo&idAcordos={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
                     <td>{{acord.PaisInstituicao}}</td>
                     <td>{{acord.Continente}}</td>
                     <td>{{acord.dataAssinatura}}</td>
