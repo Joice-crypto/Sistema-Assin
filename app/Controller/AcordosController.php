@@ -5,12 +5,12 @@
 		public function index() // pagina que vai aparecer todos os meus acordos
 		{
 			try {
-				$colecAgreements = Acordos::getAllAgreements();
+				
 
 				$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 				$twig = new \Twig\Environment($loader);
 				$template = $twig->load('Acordos.html'); // vai carregar a pagina de acordos da view
-
+				$colecAgreements = Acordos::getAllAgreements();
 				$parametros = array();
 
 				$parametros['Acordos'] = $colecAgreements; // estou mandando os acordos para a coleção de Acortodos para recuperar na view
@@ -89,8 +89,8 @@
 		public function insert(){ // vou pegar os dados do create e jogar no banco de dados
 			try{
 				Acordos::insertAgreements($_POST);
-			echo '<script>alert("Publicação inserida com sucesso!");</script>';
-				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
+				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
+				exit();
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';

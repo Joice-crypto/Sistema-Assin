@@ -6,7 +6,9 @@ class Acordos
     public static function getAllAgreements(){ // PEGAR TODOS OS ACORDOS
         $con = Connection::getConn();
 
-        $sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (AI.AcordosInternacionaisResFK = res.idResponsaveis)  ORDER BY idAcordos DESC";
+        
+
+        $sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos)  ORDER BY idAcordos DESC";
         $sql = $con->prepare($sql);
         $sql->execute();
 
@@ -14,6 +16,8 @@ class Acordos
 
         while ($row = $sql->fetchObject('Acordos')) {
             $resultado[] = $row;
+        
+
         }
 
         if (!$resultado) {
@@ -28,7 +32,7 @@ class Acordos
     {
         $con = Connection::getConn();
 
-			$sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (AI.AcordosInternacionaisResFK = res.idResponsaveis) WHERE idAcordos = :idAcordos";
+			$sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos) WHERE idAcordos = :idAcordos";
 			$sql = $con->prepare($sql);
 			$sql->bindValue(':idAcordos', $idPost, PDO::PARAM_INT);
 			$sql->execute();
@@ -51,7 +55,7 @@ class Acordos
 
     public static function insertAgreements($dadosPost) // INSERIR ACORDO 
 	    {
-            // verifica se todos os campos foram setados
+           // verifica se todos os campos foram setados
 			if (empty($dadosPost['NomeInstituicao']) or empty($dadosPost['PaisInstituicao']) or empty($dadosPost['EnderecoInst'])
             or empty($dadosPost['Continente']) or empty($dadosPost['AcStatus']) or empty($dadosPost['AreaDeCoberturaAcordo']) or empty($dadosPost['NomeCoordenador']) or empty($dadosPost['dataAssinatura'])
             or empty($dadosPost['dataExpiracao']) or empty($dadosPost['periodoVigencia']) or empty($dadosPost['numeroDoProcesso']) or empty($dadosPost['TermosAditivos'])
@@ -65,41 +69,53 @@ class Acordos
 			}
 
 			$con = Connection::getConn();
+        
 
 
             $sql = $con->prepare('INSERT INTO AcordosInternacionais (NomeInstituicao,PaisInstituicao,EnderecoInst,Continente,AcStatus,AreaDeCoberturaAcordo,
             NomeCoordenador,dataAssinatura,dataExpiracao,periodoVigencia,numeroDoProcesso,TermosAditivos,StatusRenovacao,DOU,dataRenovacao,atividadesPrevistas,
-            publicoAlvo) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'); 
+            publicoAlvo) VALUES (:NomeInstituicao,:PaisInstituicao,:EnderecoInst,:Continente,:AcStatus,:AreaDeCoberturaAcordo,:NomeCoordenador,:dataAssinatura,
+            :dataExpiracao,:periodoVigencia,:numeroDoProcesso,:TermosAditivos,:StatusRenovacao,:DOU,:dataRenovacao,:atividadesPrevistas,:publicoAlvo)'); 
 
-			$sql->bindValue('?', $dadosPost['NomeInstituicao'], PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['PaisInstituicao'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['EnderecoInst'], PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['Continente'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['AcStatus'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['AreaDeCoberturaAcordo'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['NomeCoordenador'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['dataAssinatura'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['dataExpiracao'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['periodoVigencia'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['numeroDoProcesso'],PDO::PARAM_INT);
-            $sql->bindValue('?', $dadosPost['TermosAditivos'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['StatusRenovacao'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['DOU'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['dataRenovacao'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['atividadesPrevistas'],PDO::PARAM_STR);
-            $sql->bindValue('?', $dadosPost['publicoAlvo'],PDO::PARAM_STR);
+			$sql->bindValue(':NomeInstituicao', $dadosPost['NomeInstituicao'], PDO::PARAM_STR);
+            $sql->bindValue(':PaisInstituicao', $dadosPost['PaisInstituicao'],PDO::PARAM_STR);
+            $sql->bindValue(':EnderecoInst', $dadosPost['EnderecoInst'], PDO::PARAM_STR);
+            $sql->bindValue(':Continente', $dadosPost['Continente'],PDO::PARAM_STR);
+            $sql->bindValue(':AcStatus', $dadosPost['AcStatus'],PDO::PARAM_STR);
+            $sql->bindValue(':AreaDeCoberturaAcordo', $dadosPost['AreaDeCoberturaAcordo'],PDO::PARAM_STR);
+            $sql->bindValue(':NomeCoordenador', $dadosPost['NomeCoordenador'],PDO::PARAM_STR);
+            $sql->bindValue(':dataAssinatura', $dadosPost['dataAssinatura'],PDO::PARAM_STR);
+            $sql->bindValue(':dataExpiracao', $dadosPost['dataExpiracao'],PDO::PARAM_STR);
+            $sql->bindValue(':periodoVigencia', $dadosPost['periodoVigencia'],PDO::PARAM_STR);
+            $sql->bindValue(':numeroDoProcesso', $dadosPost['numeroDoProcesso'],PDO::PARAM_INT);
+            $sql->bindValue(':TermosAditivos', $dadosPost['TermosAditivos'],PDO::PARAM_STR);
+            $sql->bindValue(':StatusRenovacao', $dadosPost['StatusRenovacao'],PDO::PARAM_STR);
+            $sql->bindValue(':DOU', $dadosPost['DOU'],PDO::PARAM_STR);
+            $sql->bindValue(':dataRenovacao', $dadosPost['dataRenovacao'],PDO::PARAM_STR);
+            $sql->bindValue(':atividadesPrevistas', $dadosPost['atividadesPrevistas'],PDO::PARAM_STR);
+            $sql->bindValue(':publicoAlvo', $dadosPost['publicoAlvo'],PDO::PARAM_STR);
+           
 
+            $sql2 = $con->prepare('INSERT INTO Responsaveis (NomeResponsavel,FuncaoResponsavel,TelefoneResponsavel,ResponsavelEmail) VALUES (:NomeResponsavel,:FuncaoResponsavel,
+            :TelefoneResponsavel,:ResponsavelEmail)');
+            $sql2->bindValue(':NomeResponsavel', $dadosPost['NomeResponsavel'], PDO::PARAM_STR);
+            $sql2->bindValue(':FuncaoResponsavel', $dadosPost['FuncaoResponsavel'], PDO::PARAM_STR);
+            $sql2->bindValue(':TelefoneResponsavel', $dadosPost['TelefoneResponsavel'], PDO::PARAM_STR);
+            $sql2->bindValue(':ResponsavelEmail', $dadosPost['ResponsavelEmail'], PDO::PARAM_STR);
+            
+            
+            // fiz uma relação de 1-n resposaveis tem AcordosInterFK
              			
-			$res = $sql->execute();
+			$res = $sql->execute() && $sql2->execute();
                
                 if ($res == 0) {
-                    throw json_encode(array("status" => "failure", "message" => "Não foi possível cadastrar o Acordo."));
-                    exit();
-    
+                 
+                    throw new Exception("Falha ao cadastrar acordo");
+
                     return false;
                 }
             
-                throw json_encode(array("status" => "failure", "message" => "Acordo cadastrado com sucesso!."));       
+                   
 			return true;
 	    }
 
@@ -152,7 +168,7 @@ class Acordos
 			$resultado = $sql->execute();
 
 			if ($resultado == 0) {
-				throw new Exception("Falha ao deletar publicação");
+				throw new Exception("Falha ao deletar acordo");
 
 				return false;
 			}
