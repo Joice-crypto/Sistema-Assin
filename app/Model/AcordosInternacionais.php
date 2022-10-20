@@ -6,9 +6,11 @@ class Acordos
     public static function getAllAgreements(){ // PEGAR TODOS OS ACORDOS
         $con = Connection::getConn();
 
-        
+       // $sql = "SELECT * from `AcordosInternacionais`  ORDER BY idAcordos DESC";
+     
 
-        $sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos)  ORDER BY idAcordos DESC";
+   
+        $sql = "SELECT * from `Responsaveis`  AS res INNER JOIN `AcordosInternacionais` AS ai on (res.AcordosInterFK = AI.idAcordos)";
         $sql = $con->prepare($sql);
         $sql->execute();
 
@@ -33,6 +35,7 @@ class Acordos
         $con = Connection::getConn();
 
 			$sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos) WHERE idAcordos = :idAcordos";
+
 			$sql = $con->prepare($sql);
 			$sql->bindValue(':idAcordos', $idPost, PDO::PARAM_INT);
 			$sql->execute();
@@ -94,19 +97,21 @@ class Acordos
             $sql->bindValue(':dataRenovacao', $dadosPost['dataRenovacao'],PDO::PARAM_STR);
             $sql->bindValue(':atividadesPrevistas', $dadosPost['atividadesPrevistas'],PDO::PARAM_STR);
             $sql->bindValue(':publicoAlvo', $dadosPost['publicoAlvo'],PDO::PARAM_STR);
-           
 
-            $sql2 = $con->prepare('INSERT INTO Responsaveis (NomeResponsavel,FuncaoResponsavel,TelefoneResponsavel,ResponsavelEmail) VALUES (:NomeResponsavel,:FuncaoResponsavel,
-            :TelefoneResponsavel,:ResponsavelEmail)');
-            $sql2->bindValue(':NomeResponsavel', $dadosPost['NomeResponsavel'], PDO::PARAM_STR);
-            $sql2->bindValue(':FuncaoResponsavel', $dadosPost['FuncaoResponsavel'], PDO::PARAM_STR);
-            $sql2->bindValue(':TelefoneResponsavel', $dadosPost['TelefoneResponsavel'], PDO::PARAM_STR);
-            $sql2->bindValue(':ResponsavelEmail', $dadosPost['ResponsavelEmail'], PDO::PARAM_STR);
-            
-            
+            if ($sql->execute()) {
+                $ID = $con->lastInsertId();
+                    $sql2 = $con->prepare('INSERT INTO Responsaveis (NomeResponsavel,FuncaoResponsavel,TelefoneResponsavel,ResponsavelEmail,AcordosInterFK) VALUES (?,?,?,?,?)');
+                    $sql2->bindValue(1, $dadosPost['NomeResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(2, $dadosPost['FuncaoResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(3, $dadosPost['TelefoneResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(4, $dadosPost['ResponsavelEmail'], PDO::PARAM_STR);
+                    $sql2->bindValue(5,$ID, PDO::PARAM_INT);
+
+                
+            }
             // fiz uma relação de 1-n resposaveis tem AcordosInterFK
              			
-			$res = $sql->execute() && $sql2->execute();
+			$res =  $sql2->execute();
                
                 if ($res == 0) {
                  
@@ -126,7 +131,9 @@ class Acordos
 			$sql = "UPDATE AcordosInternacionais SET NomeInstituicao = :nomeInstituicao,PaisInstituicao =:PaisInstituicao,EnderecoInst = :EnderecoInst,
             Continente = :Continente,AcStatus = :AcStatus, AreaDeCoberturaAcordo = :AreaDeCoberturaAcordo, NomeCoordenador = :NomeCoordenador, dataAssinatura = :dataAssinatura,
             dataExpiraçao = :dataExpiraçao, periodoVigencia = :periodoVigencia, numeroDoProcesso = :numeroDoProcesso, TermosAditivos = :TermosAditivos, StatusRenovacao = :StatusRenovacao,
-            DOU = :DOU, dataRenocavao = :dataRenocavao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo, AcordosInternacionaisResFK = :AcordosInternacionaisResFK ;  WHERE idAcordos = :idAcordos";
+            DOU = :DOU, dataRenocavao = :dataRenocavao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo; FROM AcordosInternacionais JOIN Responsaveis
+            on NomeResponsavel = :NomeResponsavel, FuncaoResponsavel = :FuncaoResponsavel, TelefoneResponsavel = :TelefoneResponsavel, ResponsavelEmail = :ResponsavelEmail
+            WHERE AcordosInterFK = :idAcordos";
 			$sql = $con->prepare($sql);
             $sql->bindValue(':nomeInstituicao', $params['NomeInstituicao']);
             $sql->bindValue(':PaisInstituicao', $params['PaisInstituicao']);
@@ -144,9 +151,12 @@ class Acordos
             $sql->bindValue(':DOU', $params['DOU']);
             $sql->bindValue(':dataRenocavao', $params['dataRenocavao']);
             $sql->bindValue(':atividadesPrevistas', $params['atividadesPrevistas']);
-            $sql->bindValue(':publicoAlvo,', $params['publicoAlvo']);
-            $sql->bindValue(':AcordosInternacionaisResFK', $params['AcordosInternacionaisResFK']);
-			$sql->bindValue(':idAcordos', $params['idAcordos']);
+            $sql->bindValue(':publicoAlvo', $params['publicoAlvo']);
+            $sql->bindValue(':NomeResponsavel', $params['NomeResponsavel']);
+            $sql->bindValue(':FuncaoResponsavel', $params['FuncaoResponsavel']);
+            $sql->bindValue(':TelefoneResponsavel', $params['TelefoneResponsavel']);
+            $sql->bindValue(':ResponsavelEmail', $params['ResponsavelEmail']);
+			
 
 			$resultado = $sql->execute();
 
@@ -162,10 +172,18 @@ class Acordos
 		{
 			$con = Connection::getConn();
 
-			$sql = "DELETE FROM AcordosInternacionais WHERE idAcordos = :idAcordo";
-			$sql = $con->prepare($sql);
-			$sql->bindValue(':id',$idAcordo);
-			$resultado = $sql->execute();
+             $sql = "DELETE FROM Responsaveis WHERE AcordosInterFK = :idAcordo";
+             $sql = $con->prepare($sql);
+                    $sql->bindValue(':idAcordo',$idAcordo);
+                    $resultado = $sql->execute();
+
+             if($sql->execute()) {
+                
+                    $sql2 = "DELETE FROM AcordosInternacionais WHERE idAcordos = :idAcordo";
+                    $sql2 = $con->prepare($sql2);
+                    $sql2->bindValue(':idAcordo',$idAcordo);
+                    $resultado = $sql2->execute();
+             }
 
 			if ($resultado == 0) {
 				throw new Exception("Falha ao deletar acordo");

@@ -54,7 +54,7 @@
 				$parametros['TermosAditivos']= $acordo->TermosAditivos;
 				$parametros['StatusRenovacao']= $acordo->StatusRenovacao;
 				$parametros['DOU']= $acordo->DOU;
-				$parametros['dataRenocavao']= $acordo->dataRenocavao;
+				$parametros['dataRenovacao']= $acordo->dataRenovacao;
 				$parametros['atividadesPrevistas']= $acordo->atividadesPrevistas;
 				$parametros['publicoAlvo']= $acordo->publicoAlvo;
 				$parametros['NomeResponsavel']= $acordo->NomeResponsavel;
@@ -86,17 +86,45 @@
 
 	
 		}
-		public function insert(){ // vou pegar os dados do create e jogar no banco de dados
+		public function insert(){ // vou pegar os dados do create e jogar no banco de dados para inserir
 			try{
 				Acordos::insertAgreements($_POST);
 				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
-				exit();
+				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
 				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=create"</script>';
 			}
 		}
+
+		public function delete($paramID){ // deletar do banco de dados 
+			try{
+				
+				Acordos::deleteAgreements($paramID); // leva para a função do model 
+				echo json_encode(array('status' => 'success', 'message' => "Acordo deletado com sucesso!"));
+				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
+			}
+			 catch (Exception $e) {
+				echo '<script>alert("'.$e->getMessage().'");</script>';
+				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
+			}
+		}
+
+		public function Update(){ // alterar do banco de dados do banco de dados 
+			try{
+				
+				Acordos::UpdateAgreements($_POST); // chama a função que esta no model para alterar
+				echo json_encode(array('status' => 'success', 'message' => "Acordo alterado com sucesso!"));
+				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
+			}
+			 catch (Exception $e) {
+				echo '<script>alert("'.$e->getMessage().'");</script>';
+				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=Update&Id='.$_POST['idAcordos'] .'"</script>';
+			}
+		}
+
+
 
 		
 	
