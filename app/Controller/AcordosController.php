@@ -111,16 +111,58 @@
 			}
 		}
 
+		public function Change($id){
+
+			
+			$loader = new \Twig\Loader\FilesystemLoader('app/View/');
+			$twig = new \Twig\Environment($loader);
+			$template = $twig->load('EditAcordo.html'); // vai carregar a pagina de acordos da view
+
+			$parametros = array();
+			
+
+			 $acordo2 = Acordos::selecionaPorId($id);
+			
+			$parametros['idAcordos'] = $acordo2->idAcordos;
+			$parametros['NomeInstituicao'] = $acordo2->NomeInstituicao;
+			$parametros['PaisInstituicao'] = $acordo2->PaisInstituicao;
+			$parametros['EnderecoInst']= $acordo2->EnderecoInst;
+			$parametros['Continente']= $acordo2->Continente;
+			$parametros['AcStatus']= $acordo2->AcStatus;
+			$parametros['AreaDeCoberturaAcordo']= $acordo2->AreaDeCoberturaAcordo;
+			$parametros['NomeCoordenador']= $acordo2->NomeCoordenador;
+			$parametros['dataAssinatura']= $acordo2->dataAssinatura;
+			$parametros['dataExpiracao']= $acordo2->dataExpiracao;
+			$parametros['periodoVigencia']= $acordo2->periodoVigencia;
+			$parametros['numeroDoProcesso']= $acordo2->numeroDoProcesso;
+			$parametros['TermosAditivos']= $acordo2->TermosAditivos;
+			$parametros['StatusRenovacao']= $acordo2->StatusRenovacao;
+			$parametros['DOU']= $acordo2->DOU;
+			$parametros['dataRenovacao']= $acordo2->dataRenovacao;
+			$parametros['atividadesPrevistas']= $acordo2->atividadesPrevistas;
+			$parametros['publicoAlvo']= $acordo2->publicoAlvo;
+			$parametros['NomeResponsavel']= $acordo2->NomeResponsavel;
+			$parametros['FuncaoResponsavel']= $acordo2->FuncaoResponsavel;
+			$parametros['TelefoneResponsavel']= $acordo2->TelefoneResponsavel;
+			$parametros['ResponsavelEmail']= $acordo2->ResponsavelEmail;
+	   
+
+			$conteudo = $template->render($parametros);
+			echo $conteudo;
+
+		}
+
 		public function Update(){ // alterar do banco de dados do banco de dados 
+
 			try{
 				
-				Acordos::UpdateAgreements($_POST); // chama a função que esta no model para alterar
+				Acordos::updateAgreements($_POST); // chama a função que esta no model para alterar
 				echo json_encode(array('status' => 'success', 'message' => "Acordo alterado com sucesso!"));
 				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=Update&Id='.$_POST['idAcordos'] .'"</script>';
+				// echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
 			}
 		}
 

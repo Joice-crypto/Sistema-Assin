@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/forms.css" rel="stylesheet">
+</head>
+<body>
+
+    <section id="container">
+        <p> Editar Acordo  {{NomeInstituicao}}</p>
+    
+        <form method="post" action="?pagina=Acordos&metodo=Update">
+    
+            <div class="row">
+     
+            <div class="row">
+               
+                <div class="col">
+                    <label for="Nome"> Nome da Instituição</label>
+                    <input type="Pais"  class="form-control" value="{{NomeInstituicao}}">       
+                </div>
+            
+                <div class="col">
+                    <label for="Pais">País</label>
+                    <input type="Pais"  class="form-control" value="{{PaisInstituicao}}">
+                </div>
+            
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="endereco">Endereço Completo </label>
+                    <input type="text"  class="form-control" value="{{EnderecoInst}}">
+                </div>
+                    <div class="col">
+                        <label for="Continente"> Continente </label>
+                        <input type="text"   value="{{Continente}}" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                    <label for="NomeResp"> Nome do Responsavel </label>
+                    <input type="text"  value="{{NomeResponsavel}}" class="form-control">
+                    </div>
+                    <div class="col">
+                    <label for="funcao"> Função Responsavel </label>
+                    <input type="text"  value="{{FuncaoResponsavel}}"  class="form-control">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col">
+                    <label for="telefone"> Telefone Responsavel</label>
+                    <input type="text"  value="{{TelefoneResponsavel}}" class="form-control">
+                    </div>
+                    <div class="col">
+                    <label for="email"> Email Responsavel </label>
+                    <input type="text"  value="{{ResponsavelEmail}}" class="form-control">
+                </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col">
+                            <label for="status"> Status </label>
+                            <input type="text"  value="{{AcStatus}}" class="form-control">
+                    </div> 
+                    <div class="col">
+                        <label for="cobertura"> Area de Cobertura </label>
+                        <input type="text"  value="{{AreaDeCoberturaAcordo}}" class="form-control" >
+                    </div>
+                </div>
+               
+                <div class="row">
+                        <div class="col">
+                        <label for="inputAddress">Nome do Coordenador Do Acordo</label>
+                        <input type="text"  value="{{NomeCoordenador}}" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="col">
+                            <label for="cobertura"> D.O.U </label>
+                            <input type="text"  value="{{DOU}}" class="form-control" required>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col">
+                            <label for="formFile" class="form-label">Numero do Processo</label>
+                            <input class="form-control"  type="number" value="{{numeroDoProcesso}}" id="formFile">
+                        </div>
+                        <div class="col">
+                            <label for="PaisDestino">Status de Renovação</label>
+                            <input type="text"  value="{{StatusRenovacao}}" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col">
+                            <label for="assinatura"> Data de Assinatura </label>
+                            <input type="date"  value="{{dataAssinatura}}" class="form-control">
+                    </div>
+                    <div class="col">
+                            <label for="expiracao"> Data de Expiração </label>
+                            <input type="date"  value="{{dataExpiracao}}" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="formFile" class="form-label">Termos Aditivos</label>
+                        <input class="form-control"  type="text" value="{{TermosAditivos}}" id="formFile">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="PaisDestino">Periodo de Vigencia</label>
+                        <input type="text"  value="{{periodoVigencia}}" class="form-control">
+                    </div>
+                </div>
+                
+    
+                <div class="butao">
+                  
+                    <button type="submit" class="btn btn-primary"> Alterar </button> 
+                </div>
+            </div>
+    
+        </form>
+    
+    </section>
+    
+</body>
+</html>
