@@ -157,12 +157,12 @@
 			try{
 				
 				Acordos::updateAgreements($_POST); // chama a função que esta no model para alterar
-				echo json_encode(array('status' => 'success', 'message' => "Acordo alterado com sucesso!"));
-				echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
+				echo '<script>alert("Publicação alterada com sucesso!");</script>';
+				 echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				// echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
+				 echo '<script>location.href="http://localhost:8000/?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
 			}
 		}
 

@@ -7,9 +7,7 @@ class Acordos
         $con = Connection::getConn();
 
        // $sql = "SELECT * from `AcordosInternacionais`  ORDER BY idAcordos DESC";
-     
-
-   
+        
         $sql = "SELECT * from `Responsaveis`  AS res INNER JOIN `AcordosInternacionais` AS ai on (res.AcordosInterFK = AI.idAcordos)";
         $sql = $con->prepare($sql);
         $sql->execute();
@@ -19,7 +17,6 @@ class Acordos
         while ($row = $sql->fetchObject('Acordos')) {
             $resultado[] = $row;
         
-
         }
 
         if (!$resultado) {
@@ -34,8 +31,8 @@ class Acordos
     {
         $con = Connection::getConn();
 
-			$sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos) WHERE idAcordos = :idAcordos";
-
+			 $sql = "SELECT * from `AcordosInternacionais` AS AI inner join `Responsaveis` as res on (res.AcordosInterFK = AI.idAcordos) WHERE idAcordos = :idAcordos";
+           // $sql = "SELECT * from `AcordosInternacionais` WHERE idAcordos = :idAcordos";
 			$sql = $con->prepare($sql);
 			$sql->bindValue(':idAcordos', $idPost, PDO::PARAM_INT);
 			$sql->execute();
@@ -128,15 +125,13 @@ class Acordos
 		{
 			$con = Connection::getConn();
 
-			$sql = "UPDATE AcordosInternacionais SET NomeInstituicao = :NomeInstituicao,PaisInstituicao =:PaisInstituicao,EnderecoInst = :EnderecoInst  ;
-                 Continente = :Continente,AcStatus = :AcStatus, AreaDeCoberturaAcordo = :AreaDeCoberturaAcordo, NomeCoordenador = :NomeCoordenador, dataAssinatura = :dataAssinatura 
-             dataExpiracao = :dataExpiracao, periodoVigencia = :periodoVigencia, numeroDoProcesso = :numeroDoProcesso, TermosAditivos = :TermosAditivos, StatusRenovacao = :StatusRenovacao,
-             DOU = :DOU, dataRenocavao = :dataRenocavao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo WHERE idAcordos = :idAcordos";
-
+			$sql = "UPDATE AcordosInternacionais INNER JOIN Responsaveis  ON AcordosInternacionais.idAcordos = Responsaveis.AcordosInterFK SET NomeInstituicao = :NomeInstituicao,PaisInstituicao =:PaisInstituicao,EnderecoInst = :EnderecoInst, 
+                 Continente = :Continente,AcStatus = :AcStatus, AreaDeCoberturaAcordo = :AreaDeCoberturaAcordo, NomeCoordenador = :NomeCoordenador, dataAssinatura = :dataAssinatura,
+              dataExpiracao = :dataExpiracao, periodoVigencia = :periodoVigencia, numeroDoProcesso = :numeroDoProcesso, TermosAditivos = :TermosAditivos, StatusRenovacao = :StatusRenovacao,
+              DOU = :DOU, dataRenovacao = :dataRenovacao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo  WHERE idAcordos = :idAcordos";
 
 			$sql = $con->prepare($sql);
 
-            
             $sql->bindValue(':NomeInstituicao', $params['NomeInstituicao'], PDO::PARAM_STR);
             $sql->bindValue(':PaisInstituicao', $params['PaisInstituicao'],PDO::PARAM_STR);
             $sql->bindValue(':EnderecoInst', $params['EnderecoInst'], PDO::PARAM_STR);
@@ -151,25 +146,28 @@ class Acordos
             $sql->bindValue(':TermosAditivos', $params['TermosAditivos'],PDO::PARAM_STR);
             $sql->bindValue(':StatusRenovacao', $params['StatusRenovacao'],PDO::PARAM_STR);
             $sql->bindValue(':DOU', $params['DOU'],PDO::PARAM_STR);
-            $sql->bindValue(':dataRenovacao', $params['dataRenovacao'],PDO::PARAM_STR);
+             $sql->bindValue(':dataRenovacao', $params['dataRenovacao'],PDO::PARAM_STR);
             $sql->bindValue(':atividadesPrevistas', $params['atividadesPrevistas'],PDO::PARAM_STR);
-            $sql->bindValue(':publicoAlvo', $params['publicoAlvo'],PDO::PARAM_STR);
+             $sql->bindValue(':publicoAlvo', $params['publicoAlvo'],PDO::PARAM_STR);
              $sql->bindValue(':idAcordos', $params['idAcordos'] , PDO::PARAM_INT);
 
 
-            // if ($sql->execute()) {
-            //     $ID = $con->lastInsertId();
-            //         $sql2 = $con->prepare('UPDATE Responsaveis SET NomeResponsavel = :NomeResponsavel, FuncaoResponsavel = :FuncaoResponsavel, TelefoneResponsavel = :TelefoneResponsavel
-            //         ResponsavelEmail = :ResponsavelEmail, AcordosInterFK = :AcordosInterFK   WHERE AcordosInterFK = ?');
-            //         $sql2->bindValue(':NomeResponsavel', $params['NomeResponsavel'], PDO::PARAM_STR);
-            //         $sql2->bindValue(':FuncaoResponsavel', $params['FuncaoResponsavel'], PDO::PARAM_STR);
-            //         $sql2->bindValue(':TelefoneResponsavel', $params['TelefoneResponsavel'], PDO::PARAM_STR);
-            //         $sql2->bindValue(':ResponsavelEmail', $params['ResponsavelEmail'], PDO::PARAM_STR);
-            //         $sql2->bindValue($ID,$params['AcordosInterFK'], PDO::PARAM_INT);
-                    
-            // }
+            if ($sql->execute()) {
+                
+                    $sql2 = 'UPDATE Responsaveis INNER JOIN AcordosInternacionais  ON AcordosInternacionais.idAcordos = Responsaveis.AcordosInterFK SET NomeResponsavel = :NomeResponsavel, FuncaoResponsavel = :FuncaoResponsavel, 
+                    TelefoneResponsavel = :TelefoneResponsavel, ResponsavelEmail = :ResponsavelEmail   WHERE AcordosInterFK = :idAcordos ';
 
-            $resultado =  $sql->execute();
+                    $sql2 = $con->prepare($sql2);
+                    
+                    $sql2->bindValue(':NomeResponsavel', $params['NomeResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(':FuncaoResponsavel', $params['FuncaoResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(':TelefoneResponsavel', $params['TelefoneResponsavel'], PDO::PARAM_STR);
+                    $sql2->bindValue(':ResponsavelEmail', $params['ResponsavelEmail'], PDO::PARAM_STR);
+                    $sql2->bindValue(':idAcordos',$params['AcordosInterFK'], PDO::PARAM_INT);
+                    
+            }
+
+            $resultado =  $sql2->execute();
             
 
 			if ($resultado == 0) {

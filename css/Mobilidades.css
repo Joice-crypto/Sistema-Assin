@@ -1,0 +1,34 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300&family=Raleway:ital,wght@1,200&family=Zilla+Slab:wght@300&display=swap');
+
+
+ body {
+    text-decoration: none;
+ }
+.MobilidadesOut{
+    
+    display: flex;
+    flex-direction: row;
+    margin-left: 250px;
+    margin-top: 35px;
+    
+}
+
+.card:hover{
+    transform:scale(1.1);
+  }
+
+.card{
+    
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    transition-duration:0.5s;
+    transform-origin: 0% 0%
+    
+}
+
+h5{
+    font-family: 'Figtree', sans-serif  ;
+    color: rgb(255, 255, 255);
+}

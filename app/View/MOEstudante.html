@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<meta charset="utf-8">
+<meta name="Joice Cristina" content="">
+<head>
+<link href="css/forms.css" rel="stylesheet">
+</head>
+<body>
+
+   
+
+    <title>ASSIN -  </title>
+          
+  
+
+    <!-- Bootstrap core CSS-->
+        <div id="container">
+
+        <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+
+            <div class="card-body">
+            </div>
+            <button type="button"  class="btn btn-primary w-100 mb-3">Cadastrar um Estudante em Mobilidade Out</button>
+            <div id="Alerts"></div>
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                     <th>Nome Do Estudante</th>
+                      <th>Insituição de Destino</th>
+                      <th>Curso</th>
+                      <th>Continente</th>
+                      <th>Data de Saída</th>
+                      <th>Data de Retorno</th>
+                      
+                    </tr>
+                  </thead>
+                  {% for Estudante in MobOutEstudante %} 
+                  <tbody>
+                    <td><a href="http://localhost:8000/?pagina=Acordos&metodo=GetAcordo&idAcordos={{acord.idAcordos}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
+                    <td>{{Estudante.EstudanteMobOut_InstituicaoDest}}</td>
+                    <td>{{Estudante.EstudanteMobOut_Continente}}</td>
+                    <td>{{Estudante.EstudanteMobOut_Curso}}</td>
+                    <td>{{Estudante.EstudanteMobOut_DataSaida}}</td>
+                    <td>{{Estudante.EstudanteMobOut_DataRetorno}}</td>
+                    
+                  </tbody>
+                  {% endfor %}
+                </table>
+              
+              </div>
+             
+            </div>
+           
+        </div>
+        <!-- /.container-fluid -->
+
+  
+      
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+       
+         
+    <!-- /#wrapper -->
+
+    <!-- Scroll to Top Button-->
+    
+    <script src="js/front.js"></script>
+  </body>
+
+</body>
+</html>
