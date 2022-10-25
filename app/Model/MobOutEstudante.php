@@ -26,4 +26,25 @@ class MobOutEstudante
        
 
     }
+    public static function GetMobilidade($idPost){
+        $con = Connection::getConn();
+
+        $sql = "SELECT * from `EstudanteMobOut` WHERE idEstudante = :idEstudante";
+        $sql = $con->prepare($sql);
+        $sql->execute();
+
+        $resultado = $sql->fetchObject('MobOutEstudante');
+
+			if (!$resultado) {
+				throw new Exception("Não foi encontrado nenhum registro no banco");	
+			} else {
+				$resultado;
+			}
+
+			return $resultado;
+
+
+        return $resultado;
+
+    }
 }
