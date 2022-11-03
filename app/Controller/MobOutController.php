@@ -41,12 +41,12 @@ class MobOutController
         }
 
     }
-    public function GetMobilidadeOutEstud($params){ // vai pegar apenas um acordo 
+    public function GetMobilidade($params){ // vai pegar apenas um acordo 
 
        
         
         try {
-            $mobilidade = MobOutEstudante::GetMobilidade($params); // aqui vai aparecer um acordo selecionado por ID 
+            $mobilidade = MobOutEstudante::GetMobilidadeById($params); // aqui vai aparecer um acordo selecionado por ID 
             
     
             $loader = new \Twig\Loader\FilesystemLoader('app/View');
@@ -59,6 +59,7 @@ class MobOutController
             $parametros['EstudanteMobOut_PaisDest'] = $mobilidade->EstudanteMobOut_PaisDest;
             $parametros['EstudanteMobOut_CartaAceitacao'] = $mobilidade->EstudanteMobOut_CartaAceitacao;
             $parametros['EstudanteMobOut_Programa'] = $mobilidade->EstudanteMobOut_Programa;
+            $parametros['EstudanteMobOut_email'] = $mobilidade->EstudanteMobOut_email;
             $parametros['EstudanteMobOut_Campus'] = $mobilidade->EstudanteMobOut_Campus;
             $parametros['EstudanteMobOut_Grau'] = $mobilidade->EstudanteMobOut_Grau;
             $parametros['EstudanteMobOut_Nome'] = $mobilidade->EstudanteMobOut_Nome;
@@ -77,6 +78,7 @@ class MobOutController
             $parametros['EstudanteMobOut_DataRetorno'] = $mobilidade->EstudanteMobOut_DataRetorno;
             $parametros['EstudanteMobOut_auxilioFinanceiro'] = $mobilidade->EstudanteMobOut_auxilioFinanceiro;
             $parametros['EstudanteMobOut_TipoAuxilio'] = $mobilidade->EstudanteMobOut_TipoAuxilio;
+            $parametros['EstudanteMobOut_DescTipoAuxilio'] = $mobilidade->EstudanteMobOut_DescTipoAuxilio;
             $parametros['EstudanteMobOut_FinalidadeIntercambio'] = $mobilidade->EstudanteMobOut_FinalidadeIntercambio;
             
             $conteudo = $template->render($parametros);
@@ -95,7 +97,7 @@ class MobOutController
 			
 			$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 			$twig = new \Twig\Environment($loader);
-			$template = $twig->load('FormsMobilidadeOutEst.html'); // vai carregar a pagina de acordos da view
+			$template = $twig->load('FormsMobilidadeOutEst.html'); // vai carregar a pagina da view
 
 			$parametros = array();
 
@@ -104,6 +106,18 @@ class MobOutController
 			echo $conteudo;
 
 	
+		}
+
+        public function insert(){ // vou pegar os dados do create e jogar no banco de dados para inserir
+			try{
+				Acordos::insertAgreements($_POST);
+				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
+				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
+			}
+			 catch (Exception $e) {
+				echo '<script>alert("'.$e->getMessage().'");</script>';
+				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=create"</script>';
+			}
 		}
 
     // TERMINAR OS OUTROS METODOS AMANHA 

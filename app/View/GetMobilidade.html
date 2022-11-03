@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="Joice Cristina" content="">
+
+    <link href="css/forms.css" rel="stylesheet">
+
+</head>
+<body>
+    
+
+    <section id="container">
+        <p> Mobilidade Out - Estudantes</p>
+
+        <form>
+        <div class="row">
+            <div class="row">
+            <div class="col">
+                <label for="Nome"> Nome do Estudante  </label>
+                <input type="text" readonly="true" value="{{EstudanteMobOut_Nome}}" class="form-control">
+            </div>
+            <div class="col">
+                <label for="Email"> Email </label>
+                <input type="email" readonly="true" value="{{EstudanteMobOut_email}}" class="form-control">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="matricula"> Matricula </label>
+                    <input type="text" readonly="true" value="{{EstudanteMobOut_Matricula}}" class="form-control" required>
+                </div>
+                <div class="col">
+                        <label for="Nome"> Curso </label>
+                        <input type="text" readonly="true" value="{{EstudanteMobOut_Curso}}" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="Campus"> Campus </label>
+                    <input type="text" readonly="true" value="{{EstudanteMobOut_Campus}}" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="Telefone"> Telefone </label>
+                    <input type="text" readonly="true" value="{{EstudanteMobOut_celular}}" class="form-control" required>
+                </div>
+
+            </div>
+        
+            
+            <div class="row">
+                <div class="col">
+                <label for="inputState"> Modalidade </label>
+                <!-- <select readonly="true" id="inputState" class="form-control"> -->
+                   
+                    <input type="text" readonly="true" value="{{EstudanteMobOut_Modalidade}}" class="form-control" required>
+                        </select>
+                </div>
+                <div class="col">
+                    <label for="inputState">Grau</label>
+                    <input type="text" readonly="true" value="{{EstudanteMobOut_Grau}}" class="form-control">
+                </div>
+            </div>
+           <div class="row">
+            <div class="col">
+                <label for="identidade"> Identidade </label>
+                <input type="text" readonly="true" value="{{EstudanteMobOut_identidade}}" class="form-control">
+            </div>
+            <div class="col">
+                <label for="Programa"> Nome do Programa </label>
+                <input type="text" readonly="true" value="{{EstudanteMobOut_Programa}}" class="form-control">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                        <label for="cpf"> CPF </label>
+                        <input type="text" value="{{EstudanteMobOut_cpf}}" readonly="true" class="form-control">
+                </div>
+                <div class="col">
+                    <label for="Celular"> Celular </label>
+                    <input type="text" value="{{EstudanteMobOut_celular}}" readonly="true" class="form-control" required>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputAddress">Endereço</label>
+                    <input type="text" value="{{EstudanteMobOut_endereco}}" readonly="true" class="form-control" id="inputAddress">
+                </div>
+
+            </div>
+               
+                <div class="row">
+                    <div class="col">
+                        <label for=""> Nome do Familiar </label>
+                        <input type="text" value="{{EstudanteMobOut_nomeFamiliar}}" readonly="true" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for=""> Grau de Parentesco </label>
+                        <input type="text" value="{{EstudanteMobOut_GrauParentesco}}" readonly="true" class="form-control">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="telefone Familiar"> Telefone do Familiar </label>
+                        <input type="text" value="{{EstudanteMobOut_TelefoneFamiliar}}" readonly="true" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for=""> Email do Familiar </label>
+                        <input type="email" value="{{EstudanteMobOut_EmailFamiliar}}" readonly="true" class="form-control">
+                    </div>
+
+                </div>
+               
+           
+                <div class="row">
+                    <div class="col">
+                        <label for="InstitDestino">Instituição de Destino</label>
+                        <input type="text" value="{{EstudanteMobOut_InstituicaoDest}}" readonly="true" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="PaisDestino">País da Instituição</label>
+                        <input type="text" value="{{EstudanteMobOut_PaisDest}}" readonly="true" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Carta de Aceitação</label>
+                            <input class="form-control" value="{{EstudanteMobOut_CartaAceitacao}}" readonly="true" type="file" id="formFile">
+                        </div>
+                    </div>
+
+                </div>
+            
+            
+            <div class="row">
+                <div class="col">
+                        <label for="Arquivo1"> Finalidade do Intercambio </label>
+                        <input type="text" value="{{EstudanteMobOut_FinalidadeIntercambio}}" readonly="true" class="form-control">
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="aux">
+                        <label for="Arquivo1"> Auxilio Financeiro </label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio1" value="Sim">
+                            <label  class="form-check-label" name="inlineRadio" readonly="true"  for="inlineRadio1">Sim</label>
+                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio2" value="Não">
+                            <label class="form-check-label" name="inlineRadio"  readonly="true" for="inlineRadio1">Não</label> 
+                                
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                <div class="camposExtras">
+                    <div class="row">
+                        <div class="col">
+                            <label for="tipoAux"> Tipo de Auxilio </label>
+                                <input type="text" readonly="true" value="{{EstudanteMobOut_TipoAuxilio}}"  class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="DescAux"> Descrição do Auxilio </label>
+                                <input type="text" readonly="true" value="{{EstudanteMobOut_DescTipoAuxilio}}"  class="form-control">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <div class="teste">
+            <div class="row">
+                    <div class="col">
+                        <label for="Aux">Descreva o Tipo de Auxilio</label>
+                        <input type="text" readonly="true" value="{{EstudanteMobOut_Nome}}"  class="form-control">
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <div class="row">
+                <div class="col">
+                        <label for="Arquivo1"> Data de Saida </label>
+                        <input type="date" readonly="true" value="{{EstudanteMobOut_DataSaida}}" class="form-control">
+                </div>
+                <div class="col">
+                        <label for="Arquivo1"> Data de Retorno </label>
+                        <input type="date" readonly="true" value="{{EstudanteMobOut_DataRetorno}}" class="form-control">
+                    </div>
+                </div>
+            
+
+                <div class="butao">
+                    <button type="button" class="btn btn-danger"> <a href="/sistema/?pagina=MOEstudante&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
+                    <button type="button" class="btn btn-primary"> <a href="/sistema/?pagina=MOEstudante&metodo=Change&id={{idEstudante}}"> EDITAR</button> </a>
+                </div>
+        </div>
+
+    </form>
+
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+
+
+<script src="/js/front.js"></script>

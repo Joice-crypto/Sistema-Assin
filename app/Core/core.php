@@ -23,8 +23,8 @@ class Core
 			}
 
 
-			if (isset($urlGet['idAcordos']) && $urlGet['idAcordos'] != null) {
-				$id = $urlGet['idAcordos']; // pegando o id da minha url como parametro se ela nao tem parametro então id é null
+			if (isset($urlGet['id']) && $urlGet['id'] != null) {
+				$id = $urlGet['id']; // pegando o id da minha url como parametro se ela nao tem parametro então id é null
 			} else {
 				$id = null;
 			}

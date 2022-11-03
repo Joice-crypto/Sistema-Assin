@@ -39,7 +39,7 @@
                   </thead>
                   {% for Estudante in MobOutEstudante %} 
                   <tbody>
-                    <td><a href="http://localhost:8000/?pagina=Acordos&metodo=GetAcordo&idAcordos={{acord.idAcordos}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
+                    <td><a href="/sistema/?pagina=MobOut&metodo=GetMobilidade&id={{Estudante.idEstudante}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
                     <td>{{Estudante.EstudanteMobOut_InstituicaoDest}}</td>
                     <td>{{Estudante.EstudanteMobOut_Curso}}</td>
                     <td>{{Estudante.EstudanteMobOut_PaisDest}}</td>
