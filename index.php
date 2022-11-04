@@ -16,8 +16,8 @@ $loader = new \Twig\Loader\FilesystemLoader('app/View');// carrega minhas views
 
 $twig = new \Twig\Environment($loader); // carrega o ambiente 
 
-$template = file_get_contents('./app/View/Estrutura.html');
-$template2 = file_get_contents('./app/View/footer.html');
+$template = file_get_contents('app\View\Estrutura.html');
+$template2 = file_get_contents('app\View\footer.html');
 
 
         ob_start();

@@ -112,11 +112,11 @@ class MobOutController
 			try{
 				Acordos::insertAgreements($_POST);
 				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
-				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
+				echo '<script>location.href="/sistema/?pagina=MOEstudante&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=create"</script>';
+				echo '<script>location.href="/sistema/?pagina=MOEstudante&metodo=create"</script>';
 			}
 		}
 

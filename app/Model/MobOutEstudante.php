@@ -63,6 +63,9 @@ class MobOutEstudante
 
 				return false;
 			}
+            // FAZER O INSERIR ARQ
+            $dir = "assets/files"; 
+            $file = $_FILES["EstudanteMobOut_CartaAceitacao"];
 
 			$con = Connection::getConn();
             
@@ -105,22 +108,18 @@ class MobOutEstudante
             $sql->bindValue(':EstudanteMobOut_DescTipoAuxilio', $dadosPost['EstudanteMobOut_DescTipoAuxilio'],PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_FinalidadeIntercambio', $dadosPost['EstudanteMobOut_FinalidadeIntercambio'],PDO::PARAM_STR);
 
-
-            if ($sql->execute()) {
-                $ID = $con->lastInsertId();
-                    $sql = $con->prepare('INSERT INTO Responsaveis (NomeResponsavel,FuncaoResponsavel,TelefoneResponsavel,ResponsavelEmail,AcordosInterFK) VALUES (?,?,?,?,?)');
-                    $sql->bindValue(1, $dadosPost['NomeResponsavel'], PDO::PARAM_STR);
-                    $sql->bindValue(2, $dadosPost['FuncaoResponsavel'], PDO::PARAM_STR);
-                    $sql->bindValue(3, $dadosPost['TelefoneResponsavel'], PDO::PARAM_STR);
-                    $sql->bindValue(4, $dadosPost['ResponsavelEmail'], PDO::PARAM_STR);
-                    $sql->bindValue(5,$ID, PDO::PARAM_INT);
-
-                
-            }
-       
+            $res =  $sql->execute();
             
-                   
-			return true;
+              
+            if ($res == 0) {
+                 
+                throw new Exception("Falha ao cadastrar aluno");
+
+                return false;
+            }
+                  
+            return true;
+
 	    }
 
 
