@@ -1,11 +1,12 @@
 
 
  $('.camposExtras').hide() && $('.teste').hide();
- $('input[name="inlineRadio"]').change(function () {
- if ($('input[name="inlineRadio"]:checked').val() === "Sim") {
+ $('input[name="EstudanteMobOut_auxilioFinanceiro"]').change(function () {
+ if ($('input[name="EstudanteMobOut_auxilioFinanceiro"]:checked').val() === "Sim") {
      $('.camposExtras').show();
  } else {
      $('.camposExtras').hide();
+     $('.teste').hide()
  }
 
 

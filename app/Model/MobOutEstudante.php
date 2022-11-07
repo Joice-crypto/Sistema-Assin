@@ -51,21 +51,21 @@ class MobOutEstudante
     public static function insertMobOutStudent($dadosPost) // INSERIR mobilidade out estudante
 	    {
            // verifica se todos os campos foram setados
-			if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_CartaAceitacao'])
-            or empty($dadosPost['EstudanteMobOut_Programa']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso'])
-            or empty($dadosPost['EstudanteMobOut_Matricula']) or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade'])
-            or empty($dadosPost['EstudanteMobOut_email'])  or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) 
-            or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida'] )
+          
+			if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) or empty($dadosPost['EstudanteMobOut_Campus'])
+            or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso']) or empty($dadosPost['EstudanteMobOut_Matricula'])
+            or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade']) or empty($dadosPost['EstudanteMobOut_email'])  
+            or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) 
+            or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida'] )
             or empty($dadosPost['EstudanteMobOut_DataSaida`']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) or empty($dadosPost['EstudanteMobOut_TipoAuxilio'])
             or empty($dadosPost['EstudanteMobOut_DescTipoAuxilio']) or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio'])) // tem que preencher todos os campo 
             { 
-            	throw new Exception("Preencha todos os campos");
+            	throw new Exception(" todos os campos");
 
 				return false;
 			}
             // FAZER O INSERIR ARQ
-            $dir = "assets/files"; 
-            $file = $_FILES["EstudanteMobOut_CartaAceitacao"];
+
 
 			$con = Connection::getConn();
             

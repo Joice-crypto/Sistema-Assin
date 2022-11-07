@@ -1,5 +1,5 @@
 
-<link href="/css/forms.css" rel="stylesheet">
+<link href="css\forms.css" rel="stylesheet">
 
 <section id="container">
     <p> Cadastro de Mobilidade Out - Estudantes</p>
@@ -10,31 +10,31 @@
             <div class="row">
             <div class="col">
                 <label for="Nome"> Nome do Aluno </label>
-                <input type="text" class="form-control">
+                <input type="text" name="EstudanteMobOut_Nome" class="form-control">
             </div>
             <div class="col">
                 <label for="Email"> Email </label>
-                <input type="email" class="form-control">
+                <input type="email" name="EstudanteMobOut_email" class="form-control">
             </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="matricula"> Matricula </label>
-                    <input type="text" class="form-control" required>
+                    <input type="number" name="EstudanteMobOut_Matricula" class="form-control" required>
                 </div>
                 <div class="col">
                         <label for="Nome"> Curso </label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_Curso" class="form-control">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="Campus"> Campus </label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="EstudanteMobOut_Campus" class="form-control">
                 </div>
                 <div class="col">
                     <label for="Telefone"> Telefone </label>
-                    <input type="number" class="form-control" required>
+                    <input type="number" name="EstudanteMobOut_celular" class="form-control" required>
                 </div>
 
             </div>
@@ -45,43 +45,40 @@
                 <label for="inputState"> Modalidade </label>
                 <select id="inputState" class="form-control">
                             <option selected></option>
-                            <option>A Distancia</option>
-                            <option> Presencial </option>
+                            <option name="EstudanteMobOut_Modalidade">A Distancia</option>
+                            <option name="EstudanteMobOut_Modalidade"> Presencial </option>
                         </select>
                 </div>
                 <div class="col">
                     <label for="inputState">Grau</label>
                     <select id="inputState" class="form-control">
                         <option selected></option>
-                        <option>Graduação</option>
-                        <option> Pós-Graduação</option>
+                        <option name="EstudanteMobOut_Grau">Graduação</option>
+                        <option name="EstudanteMobOut_Grau"> Pós-Graduação</option>
                     </select>
                 </div>
             </div>
            <div class="row">
             <div class="col">
                 <label for="identidade"> Identidade </label>
-                <input type="text" class="form-control">
+                <input type="text" name="EstudanteMobOut_identidade" class="form-control">
             </div>
             <div class="col">
                 <label for="Programa"> Nome do Programa </label>
-                <input type="text" class="form-control">
+                <input type="text" name="EstudanteMobOut_Programa" class="form-control">
             </div>
             </div>
             <div class="row">
                 <div class="col">
                         <label for="cpf"> CPF </label>
-                        <input type="text" class="form-control">
+                        <input name="EstudanteMobOut_cpf" type="text" class="form-control">
                 </div>
-                <div class="col">
-                    <label for="Celular"> Celular </label>
-                    <input type="number" class="form-control" required>
-                </div>
+                
             </div>  
-            <div class="row">
+            <div class="col">
                 <div class="form-group">
                     <label for="inputAddress">Endereço</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <input type="text" name="EstudanteMobOut_endereco" class="form-control" id="inputAddress">
                 </div>
 
             </div>
@@ -89,22 +86,22 @@
                 <div class="row">
                     <div class="col">
                         <label for=""> Nome do Familiar </label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_nomeFamiliar" class="form-control">
                     </div>
                     <div class="col">
                         <label for=""> Grau de Parentesco </label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_GrauParentesco" class="form-control">
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="telefone Familiar"> Telefone do Familiar </label>
-                        <input type="number" class="form-control">
+                        <input type="number" name="EstudanteMobOut_TelefoneFamiliar" class="form-control">
                     </div>
                     <div class="col">
                         <label for=""> Email do Familiar </label>
-                        <input type="email" class="form-control">
+                        <input type="email" name="EstudanteMobOut_EmailFamiliar" class="form-control">
                     </div>
 
                 </div>
@@ -113,11 +110,11 @@
                 <div class="row">
                     <div class="col">
                         <label for="InstitDestino">Instituição de Destino</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_InstituicaoDest" class="form-control">
                     </div>
                     <div class="col">
                         <label for="PaisDestino">País da Instituição</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_PaisDest" class="form-control">
                     </div>
                 </div>
 
@@ -125,7 +122,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Carta de Aceitação</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" name="EstudanteMobOut_CartaAceitacao" type="file" id="formFile">
                         </div>
                     </div>
 
@@ -135,7 +132,7 @@
             <div class="row">
                 <div class="col">
                         <label for="Arquivo1"> Finalidade do Intercambio </label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="EstudanteMobOut_FinalidadeIntercambio" class="form-control">
                 </div>
                 
             </div>
@@ -145,9 +142,9 @@
                     <div class="aux">
                         <label for="Arquivo1"> Auxilio Financeiro </label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio1" value="Sim">
-                            <label  class="form-check-label" name="inlineRadio"  for="inlineRadio1">Sim</label>
-                            <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio2" value="Não">
+                            <input class="form-check-input" type="radio" name="EstudanteMobOut_auxilioFinanceiro" id="inlineRadio1" value="Sim">
+                            <label  class="form-check-label" name="inlineRadio"  for="inlineRadio1">Sim</label><br>
+                            <input class="form-check-input" type="radio" name="EstudanteMobOut_auxilioFinanceiro" id="inlineRadio2" value="Não">
                             <label class="form-check-label" name="inlineRadio"  for="inlineRadio1">Não</label>
                                 
                             </div>
@@ -160,12 +157,12 @@
                             <label for="tipoAux"> Tipo de Auxilio </label>
                             <select name="inputState" id="inputState" class="form-control">
                                 <option selected></option>
-                                <option>Bolsa da Instituição de Origem</option>
-                                <option>Bolsa da Instituição Anfritriã</option>
-                                <option>Bolsa de Programas Especificos</option>
-                                <option>Auxilio Viagem</option>
-                                <option>Auxilio Moradia</option>
-                                <option id="outro" value="Outro">Outros</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" >Bolsa da Instituição de Origem</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" >Bolsa da Instituição Anfritriã</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" >Bolsa de Programas Especificos</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" >Auxilio Viagem</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" >Auxilio Moradia</option>
+                                <option name="EstudanteMobOut_TipoAuxilio" id="outro" value="Outro">Outros</option>
                             </select>
                            
                         </div>
@@ -178,7 +175,7 @@
             <div class="row">
                     <div class="col">
                         <label for="Aux">Descreva o Tipo de Auxilio</label>
-                        <input type="text"  class="form-control">
+                        <input type="text" name="EstudanteMobOut_DescTipoAuxilio"  class="form-control">
                     </div>
                 </div>
             </div>
@@ -212,4 +209,4 @@
 
 
 
-<script src="/js/front.js"></script>
+<script src="js\front.js"></script>

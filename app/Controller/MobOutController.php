@@ -110,8 +110,8 @@ class MobOutController
 
         public function insert(){ // vou pegar os dados do create e jogar no banco de dados para inserir
 			try{
-				Acordos::insertAgreements($_POST);
-				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
+				MobOutEstudante::insertMobOutStudent($_POST);
+				echo json_encode(array('status' => 'success', 'message' => "Aluno cadastrado com sucesso!"));
 				echo '<script>location.href="/sistema/?pagina=MOEstudante&metodo=index"</script>';
 			}
 			 catch (Exception $e) {

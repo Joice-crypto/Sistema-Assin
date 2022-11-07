@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="Joice Cristina" content="">
 <head>
-<link href="/css/forms.css" rel="stylesheet">
+<link href="css\forms.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +22,7 @@
 
             <div class="card-body">
             </div>
-           <a href="/?pagina=Acordos&metodo=create"> <button type="button"  class="btn btn-primary w-100 mb-3">Criar Acordo</button></a>
+           <a href="?pagina=Acordos&metodo=create"> <button type="button"  class="btn btn-primary w-100 mb-3">Criar Acordo</button></a>
             <div id="Alerts"></div>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -38,7 +38,7 @@
                   </thead>
                   {% for acord in Acordos %} 
                   <tbody>
-                    <td><a href="/?pagina=Acordos&metodo=GetAcordo&id={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
+                    <td><a href="?pagina=Acordos&metodo=GetAcordo&id={{acord.idAcordos}}"> {{acord.NomeInstituicao}} </a></td>
                     <td>{{acord.PaisInstituicao}}</td>
                     <td>{{acord.Continente}}</td>
                     <td>{{acord.dataAssinatura}}</td>
@@ -67,7 +67,7 @@
 
     <!-- Scroll to Top Button-->
     
-    <script src="/js/front.js"></script>
+    <script src="js\front.js"></script>
   </body>
 
 </body>

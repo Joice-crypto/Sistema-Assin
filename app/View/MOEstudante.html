@@ -3,7 +3,8 @@
 <meta charset="utf-8">
 <meta name="Joice Cristina" content="">
 <head>
-<link href="/css/forms.css" rel="stylesheet">
+
+  <link href="css\forms.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +23,7 @@
 
             <div class="card-body">
             </div>
-            <button type="button"  class="btn btn-primary w-100 mb-3">Cadastrar um Estudante em Mobilidade Out</button>
+            <a href="?pagina=MobOut&metodo=create"> <button type="button"  class="btn btn-primary w-100 mb-3">Cadastrar Aluno em Mobilidade Out</button></a>
             <div id="Alerts"></div>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -39,7 +40,7 @@
                   </thead>
                   {% for Estudante in MobOutEstudante %} 
                   <tbody>
-                    <td><a href="/sistema/?pagina=MobOut&metodo=GetMobilidade&id={{Estudante.idEstudante}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
+                    <td><a href="?pagina=MobOut&metodo=GetMobilidade&id={{Estudante.idEstudante}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
                     <td>{{Estudante.EstudanteMobOut_InstituicaoDest}}</td>
                     <td>{{Estudante.EstudanteMobOut_Curso}}</td>
                     <td>{{Estudante.EstudanteMobOut_PaisDest}}</td>
@@ -69,8 +70,7 @@
 
     <!-- Scroll to Top Button-->
     
-    <script src="/js/front.js"></script>
-  </body>
-
+  
+  <script src="js\front.js"></script>
 </body>
 </html>
