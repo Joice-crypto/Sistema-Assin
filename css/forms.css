@@ -45,6 +45,10 @@ body { overflow-x: hidden;
    
 }
 
+a{
+    text-decoration: none;
+  }
+  
 
 #container{
 
@@ -72,14 +76,13 @@ form label {
 
 }
 .butao{
-         
+    
+    margin-bottom:20px ;
     padding-top: 90px;
     padding-bottom: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    
     
 }
 

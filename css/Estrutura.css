@@ -52,6 +52,9 @@ header p {
 #footer{
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 
 #fluid{
   display: inline-block;

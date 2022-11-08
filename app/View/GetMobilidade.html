@@ -147,9 +147,9 @@
                     <div class="aux">
                         <label for="Arquivo1"> Auxilio Financeiro </label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio1" value="Sim">
-                            <label  class="form-check-label" name="inlineRadio" readonly="true"  for="inlineRadio1">Sim</label>
-                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio2" value="Não">
+                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio1" value="{{EstudanteMobOut_auxilioFinanceiro}}">
+                            <label  class="form-check-label" name="inlineRadio" readonly="true"  for="inlineRadio1">Sim</label><br>
+                            <input class="form-check-input" readonly="true" type="radio" name="inlineRadio" id="inlineRadio2" value="{{EstudanteMobOut_auxilioFinanceiro}}">
                             <label class="form-check-label" name="inlineRadio"  readonly="true" for="inlineRadio1">Não</label> 
                                 
                             </div>
@@ -197,8 +197,8 @@
             
 
                 <div class="butao">
-                    <button type="button" class="btn btn-danger"> <a href="/sistema/?pagina=MOEstudante&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
-                    <button type="button" class="btn btn-primary"> <a href="/sistema/?pagina=MOEstudante&metodo=Change&id={{idEstudante}}"> EDITAR</button> </a>
+                    <button type="button" class="btn btn-danger"> <a href="?pagina=MOEstudante&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
+                    <button type="button" class="btn btn-primary"> <a href="?pagina=MOEstudante&metodo=Mudar&id={{idEstudante}}"> EDITAR</button> </a>
                 </div>
         </div>
 
@@ -211,3 +211,5 @@
 
 
 <script src="js\front.js"></script>
+<script src="js\bootstrap.bundle.min.js"></script>
+<script src="js\jquery-3.6.0.js"></script>      

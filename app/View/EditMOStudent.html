@@ -1,40 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="Joice Cristina" content="">
 
-<link href="css\forms.css" rel="stylesheet">
+    <link href="css\forms.css" rel="stylesheet">
 
-<section id="container">
-    <p> Cadastro de Mobilidade Out - Estudantes</p>
-
+</head>
+<body>
     
-    <form method="post" action="?pagina=MobOut&metodo=insert">
+
+    <section id="container">
+        <p> Mobilidade Out - Estudantes</p>
+
+        <form>
         <div class="row">
             <div class="row">
             <div class="col">
-                <label for="Nome"> Nome do Aluno </label>
-                <input type="text" name="EstudanteMobOut_Nome" class="form-control">
+                <label for="Nome"> Nome do Estudante  </label>
+                <input type="text" value="{{EstudanteMobOut_Nome}}" class="form-control">
             </div>
             <div class="col">
                 <label for="Email"> Email </label>
-                <input type="email" name="EstudanteMobOut_email" class="form-control">
+                <input type="email" value="{{EstudanteMobOut_email}}" class="form-control">
             </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="matricula"> Matricula </label>
-                    <input type="number" name="EstudanteMobOut_Matricula" class="form-control" required>
+                    <input type="text" value="{{EstudanteMobOut_Matricula}}" class="form-control" required>
                 </div>
                 <div class="col">
                         <label for="Nome"> Curso </label>
-                        <input type="text" name="EstudanteMobOut_Curso" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_Curso}}" class="form-control">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="Campus"> Campus </label>
-                    <input type="text" name="EstudanteMobOut_Campus" class="form-control">
+                    <input type="text" value="{{EstudanteMobOut_Campus}}" class="form-control">
                 </div>
                 <div class="col">
                     <label for="Telefone"> Telefone </label>
-                    <input type="number" name="EstudanteMobOut_celular" class="form-control" required>
+                    <input type="text" value="{{EstudanteMobOut_celular}}" class="form-control" required>
                 </div>
 
             </div>
@@ -43,42 +50,40 @@
             <div class="row">
                 <div class="col">
                 <label for="inputState"> Modalidade </label>
-                <select name="EstudanteMobOut_Modalidade" id="inputState" class="form-control">
-                            <option selected></option>
-                            <option >A Distancia</option>
-                            <option > Presencial </option>
+                <!-- <select id="inputState" class="form-control"> -->
+                   
+                    <input type="text" value="{{EstudanteMobOut_Modalidade}}" class="form-control" required>
                         </select>
                 </div>
                 <div class="col">
                     <label for="inputState">Grau</label>
-                    <select name="EstudanteMobOut_Grau" id="inputState" class="form-control">
-                        <option selected></option>
-                        <option >Graduação</option>
-                        <option > Pós-Graduação</option>
-                    </select>
+                    <input type="text" value="{{EstudanteMobOut_Grau}}" class="form-control">
                 </div>
             </div>
            <div class="row">
             <div class="col">
                 <label for="identidade"> Identidade </label>
-                <input type="text" name="EstudanteMobOut_identidade" class="form-control">
+                <input type="text" value="{{EstudanteMobOut_identidade}}" class="form-control">
             </div>
             <div class="col">
                 <label for="Programa"> Nome do Programa </label>
-                <input type="text" name="EstudanteMobOut_Programa" class="form-control">
+                <input type="text" value="{{EstudanteMobOut_Programa}}" class="form-control">
             </div>
             </div>
             <div class="row">
                 <div class="col">
                         <label for="cpf"> CPF </label>
-                        <input name="EstudanteMobOut_cpf" type="text" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_cpf}}" class="form-control">
                 </div>
-                
+                <div class="col">
+                    <label for="Celular"> Celular </label>
+                    <input type="text" value="{{EstudanteMobOut_celular}}" class="form-control" required>
+                </div>
             </div>  
-            <div class="col">
+            <div class="row">
                 <div class="form-group">
                     <label for="inputAddress">Endereço</label>
-                    <input type="text" name="EstudanteMobOut_endereco" class="form-control" id="inputAddress">
+                    <input type="text" value="{{EstudanteMobOut_endereco}}" class="form-control" id="inputAddress">
                 </div>
 
             </div>
@@ -86,22 +91,22 @@
                 <div class="row">
                     <div class="col">
                         <label for=""> Nome do Familiar </label>
-                        <input type="text" name="EstudanteMobOut_nomeFamiliar" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_nomeFamiliar}}" class="form-control">
                     </div>
                     <div class="col">
                         <label for=""> Grau de Parentesco </label>
-                        <input type="text" name="EstudanteMobOut_GrauParentesco" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_GrauParentesco}}" class="form-control">
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="col">
                         <label for="telefone Familiar"> Telefone do Familiar </label>
-                        <input type="number" name="EstudanteMobOut_TelefoneFamiliar" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_TelefoneFamiliar}}" class="form-control">
                     </div>
                     <div class="col">
                         <label for=""> Email do Familiar </label>
-                        <input type="email" name="EstudanteMobOut_EmailFamiliar" class="form-control">
+                        <input type="email" value="{{EstudanteMobOut_EmailFamiliar}}" class="form-control">
                     </div>
 
                 </div>
@@ -110,11 +115,11 @@
                 <div class="row">
                     <div class="col">
                         <label for="InstitDestino">Instituição de Destino</label>
-                        <input type="text" name="EstudanteMobOut_InstituicaoDest" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_InstituicaoDest}}" class="form-control">
                     </div>
                     <div class="col">
                         <label for="PaisDestino">País da Instituição</label>
-                        <input type="text" name="EstudanteMobOut_PaisDest" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_PaisDest}}" class="form-control">
                     </div>
                 </div>
 
@@ -122,7 +127,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Carta de Aceitação</label>
-                            <input class="form-control" name="EstudanteMobOut_CartaAceitacao" type="file" id="formFile">
+                            <input class="form-control" value="{{EstudanteMobOut_CartaAceitacao}}" type="file" id="formFile">
                         </div>
                     </div>
 
@@ -132,7 +137,7 @@
             <div class="row">
                 <div class="col">
                         <label for="Arquivo1"> Finalidade do Intercambio </label>
-                        <input type="text" name="EstudanteMobOut_FinalidadeIntercambio" class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_FinalidadeIntercambio}}" class="form-control">
                 </div>
                 
             </div>
@@ -142,10 +147,10 @@
                     <div class="aux">
                         <label for="Arquivo1"> Auxilio Financeiro </label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="EstudanteMobOut_auxilioFinanceiro" id="inlineRadio1" value="Sim">
+                            <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio1" value="{{EstudanteMobOut_auxilioFinanceiro}}">
                             <label  class="form-check-label" name="inlineRadio"  for="inlineRadio1">Sim</label><br>
-                            <input class="form-check-input" type="radio" name="EstudanteMobOut_auxilioFinanceiro" id="inlineRadio2" value="Não">
-                            <label class="form-check-label" name="inlineRadio"  for="inlineRadio1">Não</label>
+                            <input class="form-check-input" type="radio" name="inlineRadio" id="inlineRadio2" value="{{EstudanteMobOut_auxilioFinanceiro}}">
+                            <label class="form-check-label" name="inlineRadio"  for="inlineRadio1">Não</label> 
                                 
                             </div>
                         </div>
@@ -155,16 +160,13 @@
                     <div class="row">
                         <div class="col">
                             <label for="tipoAux"> Tipo de Auxilio </label>
-                            <select name="EstudanteMobOut_TipoAuxilio"  id="inputState" class="form-control">
-                                <option selected></option>
-                                <option >Bolsa da Instituição de Origem</option>
-                                <option >Bolsa da Instituição Anfritriã</option>
-                                <option >Bolsa de Programas Especificos</option>
-                                <option >Auxilio Viagem</option>
-                                <option >Auxilio Moradia</option>
-                                <option id="outro" value="Outro">Outros</option>
-                            </select>
-                           
+                                <input type="text" value="{{EstudanteMobOut_TipoAuxilio}}"  class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="DescAux"> Descrição do Auxilio </label>
+                                <input type="text" value="{{EstudanteMobOut_DescTipoAuxilio}}"  class="form-control">
                         </div>
                     </div>
                     
@@ -175,7 +177,7 @@
             <div class="row">
                     <div class="col">
                         <label for="Aux">Descreva o Tipo de Auxilio</label>
-                        <input type="text" name="EstudanteMobOut_DescTipoAuxilio"  class="form-control">
+                        <input type="text" value="{{EstudanteMobOut_Nome}}"  class="form-control">
                     </div>
                 </div>
             </div>
@@ -185,28 +187,29 @@
             <div class="row">
                 <div class="col">
                         <label for="Arquivo1"> Data de Saida </label>
-                        <input type="date" name="EstudanteMobOut_DataSaida" class="form-control">
+                        <input type="date" value="{{EstudanteMobOut_DataSaida}}" class="form-control">
                 </div>
                 <div class="col">
                         <label for="Arquivo1"> Data de Retorno </label>
-                        <input type="date" name="EstudanteMobOut_DataRetorno" class="form-control">
+                        <input type="date" value="{{EstudanteMobOut_DataRetorno}}" class="form-control">
                     </div>
                 </div>
             
 
-            <div class="butao">
-                <button type="submit" class="btn btn-primary">ENVIAR</button>
-            </div>
+                <div class="butao">
+                    <button type="button" class="btn btn-danger"> <a href="/sistema/?pagina=MOEstudante&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
+                    <button type="button" class="btn btn-primary"> <a href="/sistema/?pagina=MOEstudante&metodo=Change&id={{idEstudante}}"> EDITAR</button> </a>
+                </div>
         </div>
 
     </form>
 
-
-
-
 </section>
+</body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 
 
 
 <script src="js\front.js"></script>
+<script src="js\bootstrap.bundle.min.js"></script>
+<script src="js\jquery-3.6.0.js"></script>      
