@@ -1,5 +1,7 @@
 <?php
 
+require_once("app\Model\File.php");
+
 class MobOutEstudante
 {
 
@@ -52,7 +54,6 @@ class MobOutEstudante
 	    {
 
           
-            
            // verifica se todos os campos foram setados
           
 			if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) 
@@ -67,13 +68,29 @@ class MobOutEstudante
 
 				return false;
 			}
-            // FAZER O INSERIR ARQ
+            $FILE = $_FILES['EstudanteMobOut_CartaAceitacao'];
+            $Path = 'assets\files/';
 
+            $nome_arq = $_FILES['EstudanteMobOut_CartaAceitacao']['name'];
+     
+            $upload_file = $Path . $nome_arq;
+            $file_size = $FILE['size'];
+            
+      
+            if ($file_size > MAX_FILE_SIZE){
+              echo "Arquivo muito grande";
+      
+              return false;
+      
+            }
+      
+            if (move_uploaded_file($FILE['tmp_name'], $upload_file)){
+                return true;
+            }
         
 
 			$con = Connection::getConn();
-            
-           
+     
 
             $sql = $con->prepare('INSERT INTO EstudanteMobOut (EstudanteMobOut_InstituicaoDest,EstudanteMobOut_PaisDest,EstudanteMobOut_CartaAceitacao,EstudanteMobOut_Programa,
             EstudanteMobOut_Campus,EstudanteMobOut_Grau,EstudanteMobOut_Nome,EstudanteMobOut_Curso,EstudanteMobOut_Matricula,EstudanteMobOut_Modalidade,EstudanteMobOut_cpf,
@@ -113,14 +130,16 @@ class MobOutEstudante
             $sql->bindValue(':EstudanteMobOut_FinalidadeIntercambio', $dadosPost['EstudanteMobOut_FinalidadeIntercambio'],PDO::PARAM_STR);
 
             $res =  $sql->execute();
-            
-              
+   
             if ($res == 0) {
                  
                 throw new Exception("Falha ao cadastrar aluno");
 
                 return false;
             }
+
+            
+   
                   
             return true;
 

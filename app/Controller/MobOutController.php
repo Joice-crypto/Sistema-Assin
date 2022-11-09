@@ -109,16 +109,19 @@ class MobOutController
 		}
 
         public function insert(){ // vou pegar os dados do create e jogar no banco de dados para inserir
+             MobOutEstudante::insertMobOutStudent($_POST);
            
-			try{
-				MobOutEstudante::insertMobOutStudent($_POST);
-				echo json_encode(array('status' => 'success', 'message' => "Aluno cadastrado com sucesso!"));
-				echo '<script>location.href="/sistema/?pagina=MOEstudante&metodo=index"</script>';
-			}
-			 catch (Exception $e) {
-				echo '<script>alert("'.$e->getMessage().'");</script>';
-				echo '<script>location.href="/sistema/?pagina=MOEstudante&metodo=create"</script>';
-			}
+          
+           
+			// try{
+			// 	MobOutEstudante::insertMobOutStudent($_POST);
+			// 	echo (array('status' => 'success', 'message' => "Aluno cadastrado com sucesso!"));
+			// 	echo '<script>location.href="?pagina=MobOut&metodo=GetAllMobOutStudents"</script>';
+			// }
+			//  catch (Exception $e) {
+			// 	echo '<script>alert("'.$e->getMessage().'");</script>';
+			// 	echo '<script>location.href="?pagina=MOEstudante&metodo=create"</script>';
+			// }
 		}
 
         public function Mudar($id){
