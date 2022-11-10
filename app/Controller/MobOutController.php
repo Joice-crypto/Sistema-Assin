@@ -30,8 +30,9 @@ class MobOutController
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('MOEstudante.html'); // apenas vai carregar a pagina inicial
             $colecMobEst = MobOutEstudante::getAllMobilidades();
-            $parametros = array();
-            $parametros['MobOutEstudante'] = $colecMobEst;
+             $parametros = array();
+             $parametros['MobOutEstudante'] = $colecMobEst;
+             
             $conteudo = $template->render($parametros);
             echo $conteudo;
             
@@ -109,19 +110,19 @@ class MobOutController
 		}
 
         public function insert(){ // vou pegar os dados do create e jogar no banco de dados para inserir
-             MobOutEstudante::insertMobOutStudent($_POST);
-           
-          
-           
-			// try{
-			// 	MobOutEstudante::insertMobOutStudent($_POST);
-			// 	echo (array('status' => 'success', 'message' => "Aluno cadastrado com sucesso!"));
-			// 	echo '<script>location.href="?pagina=MobOut&metodo=GetAllMobOutStudents"</script>';
-			// }
-			//  catch (Exception $e) {
-			// 	echo '<script>alert("'.$e->getMessage().'");</script>';
-			// 	echo '<script>location.href="?pagina=MOEstudante&metodo=create"</script>';
-			// }
+         
+
+
+        
+			try{
+				MobOutEstudante::insertMobOutStudent($_POST);
+				echo json_encode(array('status' => 'success', 'message' => "Aluno cadastrado com sucesso!"));
+				//echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>'
+			}
+			 catch (Exception $e) {
+				echo '<script>alert("'.$e->getMessage().'");</script>';
+				echo '<script>location.href="?pagina=MOEstudante&metodo=create"</script>';
+			}
 		}
 
         public function Mudar($id){

@@ -53,21 +53,24 @@ class MobOutEstudante
     public static function insertMobOutStudent($dadosPost) // INSERIR mobilidade out estudante
 	    {
 
+            $con = Connection::getConn();
+     
+     //      verifica se todos os campos foram setados
           
-           // verifica se todos os campos foram setados
-          
-			if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) 
-            or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso']) or empty($dadosPost['EstudanteMobOut_Matricula'])
-            or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade']) 
-            or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) 
-            or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida']) 
-            or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) 
-            or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_email'])) // tem que preencher todos os campo 
-            { 
-            	throw new Exception(" todos os campos");
+			// if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) 
+            // or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso']) or empty($dadosPost['EstudanteMobOut_Matricula'])
+            // or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade']) 
+            // or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) 
+            // or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida']) 
+            // or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) 
+            // or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_email'])) // tem que preencher todos os campo 
+            // { 
+            // 	throw new Exception(" todos os campos");
 
-				return false;
-			}
+			// 	return false;
+			// }
+              
+
             $FILE = $_FILES['EstudanteMobOut_CartaAceitacao'];
             $Path = 'assets\files/';
 
@@ -89,9 +92,6 @@ class MobOutEstudante
             }
         
 
-			$con = Connection::getConn();
-     
-
             $sql = $con->prepare('INSERT INTO EstudanteMobOut (EstudanteMobOut_InstituicaoDest,EstudanteMobOut_PaisDest,EstudanteMobOut_CartaAceitacao,EstudanteMobOut_Programa,
             EstudanteMobOut_Campus,EstudanteMobOut_Grau,EstudanteMobOut_Nome,EstudanteMobOut_Curso,EstudanteMobOut_Matricula,EstudanteMobOut_Modalidade,EstudanteMobOut_cpf,
             EstudanteMobOut_identidade,EstudanteMobOut_email,EstudanteMobOut_celular,EstudanteMobOut_endereco,EstudanteMobOut_nomeFamiliar,EstudanteMobOut_TelefoneFamiliar,
@@ -105,7 +105,7 @@ class MobOutEstudante
 
             $sql->bindValue(':EstudanteMobOut_InstituicaoDest', $dadosPost['EstudanteMobOut_InstituicaoDest'], PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_PaisDest', $dadosPost['EstudanteMobOut_PaisDest'],PDO::PARAM_STR);
-            $sql->bindValue(':EstudanteMobOut_CartaAceitacao', $dadosPost['EstudanteMobOut_CartaAceitacao'],PDO::PARAM_STR);
+            $sql->bindValue(':EstudanteMobOut_CartaAceitacao', $nome_arq,PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_Programa', $dadosPost['EstudanteMobOut_Programa'],PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_Campus', $dadosPost['EstudanteMobOut_Campus'],PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_Grau', $dadosPost['EstudanteMobOut_Grau'],PDO::PARAM_STR);
@@ -137,9 +137,6 @@ class MobOutEstudante
 
                 return false;
             }
-
-            
-   
                   
             return true;
 

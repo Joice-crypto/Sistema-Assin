@@ -73,15 +73,16 @@
                         <label for="cpf"> CPF </label>
                         <input name="EstudanteMobOut_cpf" type="text" class="form-control">
                 </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="inputAddress">Endereço</label>
+                        <input type="text" name="EstudanteMobOut_endereco" class="form-control" id="inputAddress">
+                    </div>
+    
+                </div>
                 
             </div>  
-            <div class="col">
-                <div class="form-group">
-                    <label for="inputAddress">Endereço</label>
-                    <input type="text" name="EstudanteMobOut_endereco" class="form-control" id="inputAddress">
-                </div>
-
-            </div>
+            
                
                 <div class="row">
                     <div class="col">
@@ -122,18 +123,19 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Carta de Aceitação</label>
-                            <input class="form-control" name="EstudanteMobOut_CartaAceitacao" type="file" id="formFile">
+                            <input class="form-control" name="EstudanteMobOut_CartaAceitacao" type="file">
                         </div>
                     </div>
+                    <div class="col">
+                        <label for="Arquivo1"> Finalidade do Intercambio </label>
+                        <input type="text" name="EstudanteMobOut_FinalidadeIntercambio" class="form-control">
+                </div>
 
                 </div>
             
             
             <div class="row">
-                <div class="col">
-                        <label for="Arquivo1"> Finalidade do Intercambio </label>
-                        <input type="text" name="EstudanteMobOut_FinalidadeIntercambio" class="form-control">
-                </div>
+               
                 
             </div>
 
@@ -154,16 +156,34 @@
                 <div class="camposExtras">
                     <div class="row">
                         <div class="col">
-                            <label for="tipoAux"> Tipo de Auxilio </label>
-                            <select name="EstudanteMobOut_TipoAuxilio"  id="inputState" class="form-control">
-                                <option selected></option>
-                                <option >Bolsa da Instituição de Origem</option>
-                                <option >Bolsa da Instituição Anfritriã</option>
-                                <option >Bolsa de Programas Especificos</option>
-                                <option >Auxilio Viagem</option>
-                                <option >Auxilio Moradia</option>
-                                <option id="outro" value="Outro">Outros</option>
-                            </select>
+                            <legend> Tipo de Auxilio</legend>
+
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Bolsa da Instituição de Origem
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Bolsa da Instituição Anfritriã
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Bolsa de Programas Especificos
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Auxilio Viagem
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Auxilio Moradia
+                            </label><br>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" id="outro" value="Outro" for="flexCheckDefault">
+                                Outros
+                            </label><br>
+
+                    
                            
                         </div>
                     </div>
