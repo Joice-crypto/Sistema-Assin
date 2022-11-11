@@ -11,13 +11,15 @@
 
 
  
- $('select[name="inputState"]').change(function() {
- if(this.value == "Outro"){
-    $('.teste').show();
- }
- else {
-    $('.teste').hide()
- }
+ $('input[name="Outros"]').change(function() {
+
+    if ($('input[name="Outros"]:checked').val() === "Outro") {
+        $('.teste').show();
+    }
+  
+        else{
+            $('.teste').hide()
+        }
    
 
 });

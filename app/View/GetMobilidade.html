@@ -126,8 +126,9 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
+                           
                             <label for="formFile" class="form-label">Carta de Aceitação</label>
-                            <input class="form-control"    value="{{ EstudanteMobOut_CartaAceitacao}}" disabled type="text" id="formFile">
+                            <a href="assets\files\{{EstudanteMobOut_CartaAceitacao}}"><input class="form-control"   value="{{EstudanteMobOut_CartaAceitacao}}" name="EstudanteMobOut_CartaAceitacao" disabled type="text" id="formFile"></a>
                         </div>
                     </div>
                     <div class="col">
@@ -169,10 +170,36 @@
                 
                     <div class="row">
                         <div class="col">
-                            <label for="tipoAux"> Tipo de Auxilio </label>
-                                <input type="text" disabled value="{{EstudanteMobOut_TipoAuxilio}}"  class="form-control">
+                          
+                                        <legend> Tipo de Auxilio</legend>
+            
+                                        <input class="form-check-input"  disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Bolsa da Instituição de Origem
+                                        </label><br>
+                                        <input class="form-check-input"  disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Bolsa da Instituição Anfritriã
+                                        </label><br>
+                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Bolsa de Programas Especificos
+                                        </label><br>
+                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Auxilio Viagem
+                                        </label><br>
+                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Auxilio Moradia
+                                        </label><br>
+                                        <input class="form-check-input" type="checkbox" name="Outros" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                        <label class="form-check-label" id="outro"  for="flexCheckDefault">
+                                            Outros
+                                        </label><br>
                         </div>
                     </div>
+                    <div class="teste"></div>
                     <div class="row">
                         <div class="col">
                             <label for="DescAux"> Descrição do Auxilio </label>
@@ -182,16 +209,11 @@
                     
             </div>
             
-    
 
-           
-
-           
-            
 
                 <div class="butao">
-                    <button type="button" class="btn btn-danger"> <a href="?pagina=MOEstudante&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
-                    <button type="button" class="btn btn-primary"> <a href="?pagina=MOEstudante&metodo=Mudar&id={{idEstudante}}"> EDITAR</button> </a>
+                    <button type="button" class="btn btn-danger"> <a href="?pagina=MobOut&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
+                    <button type="button" class="btn btn-primary"> <a href="?pagina=MobOut&metodo=Mudar&id={{idEstudante}}"> EDITAR</button> </a>
                 </div>
         </div>
 

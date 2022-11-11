@@ -55,52 +55,37 @@ class MobOutEstudante
 
             $con = Connection::getConn();
      
-     //      verifica se todos os campos foram setados
           
-			// if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) 
-            // or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso']) or empty($dadosPost['EstudanteMobOut_Matricula'])
-            // or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade']) 
-            // or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) 
-            // or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida']) 
-            // or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) 
-            // or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_email'])) // tem que preencher todos os campo 
-            // { 
-            // 	throw new Exception(" todos os campos");
+			if (empty($dadosPost['EstudanteMobOut_InstituicaoDest']) or empty($dadosPost['EstudanteMobOut_PaisDest']) or empty($dadosPost['EstudanteMobOut_Programa']) 
+            or empty($dadosPost['EstudanteMobOut_Nome']) or empty($dadosPost['EstudanteMobOut_Curso']) or empty($dadosPost['EstudanteMobOut_Matricula'])
+            or empty($dadosPost['EstudanteMobOut_Modalidade']) or empty($dadosPost['EstudanteMobOut_cpf']) or empty($dadosPost['EstudanteMobOut_identidade']) 
+            or empty($dadosPost['EstudanteMobOut_celular'])  or empty($dadosPost['EstudanteMobOut_endereco']) or empty($dadosPost['EstudanteMobOut_nomeFamiliar']) 
+            or empty($dadosPost['EstudanteMobOut_EmailFamiliar']) or empty($dadosPost['EstudanteMobOut_GrauParentesco']) or empty($dadosPost['EstudanteMobOut_DataSaida']) 
+            or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) 
+            or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_email'])) // tem que preencher todos os campo 
+            { 
+            	throw new Exception(" todos os campos");
 
-			// 	return false;
-			// }
+				return false;
+			}
               
 
             $FILE = $_FILES['EstudanteMobOut_CartaAceitacao'];
             $Path = 'assets\files/';
 
-            $nome_arq = $_FILES['EstudanteMobOut_CartaAceitacao']['name'];
+             $nome_arq = $_FILES['EstudanteMobOut_CartaAceitacao']['name'];
      
-            $upload_file = $Path . $nome_arq;
-            $file_size = $FILE['size'];
-            
-      
-            if ($file_size > MAX_FILE_SIZE){
-              echo "Arquivo muito grande";
-      
-              return false;
-      
-            }
-      
-            if (move_uploaded_file($FILE['tmp_name'], $upload_file)){
-                return true;
-            }
-        
+           
 
-            $sql = $con->prepare('INSERT INTO EstudanteMobOut (EstudanteMobOut_InstituicaoDest,EstudanteMobOut_PaisDest,EstudanteMobOut_CartaAceitacao,EstudanteMobOut_Programa,
+            $sql = $con->prepare('INSERT INTO EstudanteMobOut (EstudanteMobOut_InstituicaoDest,EstudanteMobOut_PaisDest,EstudanteMobOut_Programa,
             EstudanteMobOut_Campus,EstudanteMobOut_Grau,EstudanteMobOut_Nome,EstudanteMobOut_Curso,EstudanteMobOut_Matricula,EstudanteMobOut_Modalidade,EstudanteMobOut_cpf,
             EstudanteMobOut_identidade,EstudanteMobOut_email,EstudanteMobOut_celular,EstudanteMobOut_endereco,EstudanteMobOut_nomeFamiliar,EstudanteMobOut_TelefoneFamiliar,
             EstudanteMobOut_EmailFamiliar,EstudanteMobOut_GrauParentesco,EstudanteMobOut_DataSaida,EstudanteMobOut_DataRetorno,EstudanteMobOut_auxilioFinanceiro,
-            EstudanteMobOut_TipoAuxilio,EstudanteMobOut_DescTipoAuxilio,EstudanteMobOut_FinalidadeIntercambio) VALUES (:EstudanteMobOut_InstituicaoDest,:EstudanteMobOut_PaisDest,:EstudanteMobOut_CartaAceitacao,:EstudanteMobOut_Programa,
+            EstudanteMobOut_TipoAuxilio,EstudanteMobOut_DescTipoAuxilio,EstudanteMobOut_FinalidadeIntercambio, EstudanteMobOut_CartaAceitacao) VALUES (:EstudanteMobOut_InstituicaoDest,:EstudanteMobOut_PaisDest,:EstudanteMobOut_Programa,
             :EstudanteMobOut_Campus,:EstudanteMobOut_Grau,:EstudanteMobOut_Nome,:EstudanteMobOut_Curso,:EstudanteMobOut_Matricula,:EstudanteMobOut_Modalidade,:EstudanteMobOut_cpf,
             :EstudanteMobOut_identidade,:EstudanteMobOut_email,:EstudanteMobOut_celular,:EstudanteMobOut_endereco,:EstudanteMobOut_nomeFamiliar,:EstudanteMobOut_TelefoneFamiliar,
             :EstudanteMobOut_EmailFamiliar,:EstudanteMobOut_GrauParentesco,:EstudanteMobOut_DataSaida,:EstudanteMobOut_DataRetorno,:EstudanteMobOut_auxilioFinanceiro,
-            :EstudanteMobOut_TipoAuxilio,:EstudanteMobOut_DescTipoAuxilio,:EstudanteMobOut_FinalidadeIntercambio)'); 
+            :EstudanteMobOut_TipoAuxilio,:EstudanteMobOut_DescTipoAuxilio,:EstudanteMobOut_FinalidadeIntercambio, :EstudanteMobOut_CartaAceitacao)'); 
 
 
             $sql->bindValue(':EstudanteMobOut_InstituicaoDest', $dadosPost['EstudanteMobOut_InstituicaoDest'], PDO::PARAM_STR);
@@ -137,22 +122,59 @@ class MobOutEstudante
 
                 return false;
             }
-                  
+            else{
+                $upload_file = $Path . $nome_arq;
+                $file_size = $FILE['size'];
+                
+          
+                if ($file_size > MAX_FILE_SIZE){
+                  echo "Arquivo muito grande";
+          
+                  return false;
+          
+                }
+          
+                if (move_uploaded_file($FILE['tmp_name'], $upload_file)){
+                    return true;
+                }
+            
+            }
+  
             return true;
 
 	    }
 
-        public static function updateMobOutStudent($params) // EDITAR UM ALUNO EM MOB OUT 
+        // public static function updateMobOutStudent($params) // EDITAR UM ALUNO EM MOB OUT 
+		// {
+
+        //     $con = Connection::getConn(); // ACABAR DE FAZER
+
+		// 	$sql = "UPDATE AcordosInternacionais EstudanteMobOut  SET NomeInstituicao = :NomeInstituicao,PaisInstituicao =:PaisInstituicao,EnderecoInst = :EnderecoInst, 
+        //     Continente = :Continente,AcStatus = :AcStatus, AreaDeCoberturaAcordo = :AreaDeCoberturaAcordo, NomeCoordenador = :NomeCoordenador, dataAssinatura = :dataAssinatura,
+        //       dataExpiracao = :dataExpiracao, periodoVigencia = :periodoVigencia, numeroDoProcesso = :numeroDoProcesso, TermosAditivos = :TermosAditivos, StatusRenovacao = :StatusRenovacao,
+        //       DOU = :DOU, dataRenovacao = :dataRenovacao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo  WHERE idAcordos = :idAcordos";
+
+        // }
+
+        public static function deleteStudent($idEstudante) 
 		{
+			$con = Connection::getConn();
 
-            $con = Connection::getConn(); // ACABAR DE FAZER
+                
+                    $sql2 = "DELETE FROM EstudanteMobOut WHERE idEstudante = :idEstudante";
+                    $sql2 = $con->prepare($sql2);
+                    $sql2->bindValue(':idEstudante',$idEstudante);
+                    $resultado = $sql2->execute();
+             
 
-			$sql = "UPDATE AcordosInternacionais EstudanteMobOut  SET NomeInstituicao = :NomeInstituicao,PaisInstituicao =:PaisInstituicao,EnderecoInst = :EnderecoInst, 
-            Continente = :Continente,AcStatus = :AcStatus, AreaDeCoberturaAcordo = :AreaDeCoberturaAcordo, NomeCoordenador = :NomeCoordenador, dataAssinatura = :dataAssinatura,
-              dataExpiracao = :dataExpiracao, periodoVigencia = :periodoVigencia, numeroDoProcesso = :numeroDoProcesso, TermosAditivos = :TermosAditivos, StatusRenovacao = :StatusRenovacao,
-              DOU = :DOU, dataRenovacao = :dataRenovacao, atividadesPrevistas = :atividadesPrevistas, publicoAlvo = :publicoAlvo  WHERE idAcordos = :idAcordos";
+			if ($resultado == 0) {
+				throw new Exception("Falha ao deletar estudante");
 
-        }
+				return false;
+			}
+
+			return true;
+		}
 
 
 }
