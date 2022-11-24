@@ -158,10 +158,11 @@
                     <div class="aux">
                         <label for="Arquivo1"> Auxilio Financeiro </label><br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" disabled type="radio" name="inlineRadio" id="inlineRadio1" value="{{EstudanteMobOut_auxilioFinanceiro}}">
-                            <label  class="form-check-label" name="inlineRadio" disabled  for="inlineRadio1">Sim</label><br>
-                            <input class="form-check-input" disabled type="radio" name="inlineRadio" id="inlineRadio2" value="{{EstudanteMobOut_auxilioFinanceiro}}">
-                            <label class="form-check-label" name="inlineRadio"  disabled for="inlineRadio1">Não</label> 
+                          <!-- <label for="inlineRadio"><input class="form-check-input" disabled type="text" name="inlineRadio" id="inlineRadio1" value="{{EstudanteMobOut_auxilioFinanceiro}}"></label>  -->
+                        
+                          <label for="inlineRadio2"><input  disabled type="text" name="inlineRadio" id="inlineRadio2" value="{{EstudanteMobOut_auxilioFinanceiro}}"></label> 
+                         
+                           
                                 
                             </div>
                         </div>
@@ -170,33 +171,36 @@
                 
                     <div class="row">
                         <div class="col">
-                          
-                                        <legend> Tipo de Auxilio</legend>
+                            <div class="checkbox">
+                                <legend> Tipo de Auxilio</legend>
             
-                                        <input class="form-check-input"  disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Bolsa da Instituição de Origem
-                                        </label><br>
-                                        <input class="form-check-input"  disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Bolsa da Instituição Anfritriã
-                                        </label><br>
-                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Bolsa de Programas Especificos
-                                        </label><br>
-                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Auxilio Viagem
-                                        </label><br>
-                                        <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Auxilio Moradia
-                                        </label><br>
-                                        <input class="form-check-input" type="checkbox" name="Outros" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
-                                        <label class="form-check-label" id="outro"  for="flexCheckDefault">
-                                            Outros
-                                        </label><br>
+                                <input class="form-check-input"   disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa da Instituição de Origem
+                                </label><br>
+                                <input class="form-check-input"  disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa da Instituição Anfritriã
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa de Programas Especificos
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Auxilio Viagem
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Auxilio Moradia
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" name="Outros" value="{{EstudanteMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" id="outro"  for="flexCheckDefault">
+                                    Outros
+                                </label><br>
+                                
+                            </div>
+                                
                         </div>
                     </div>
                     <div class="teste"></div>
