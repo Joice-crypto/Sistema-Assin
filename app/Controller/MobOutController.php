@@ -137,68 +137,69 @@ class MobOutController
 			}
 		}
 
-        // public function Mudar($id){
+        public function Mudar($id){
 
 			
-		// 	$loader = new \Twig\Loader\FilesystemLoader('app/View/');
-		// 	$twig = new \Twig\Environment($loader);
-		// 	$template = $twig->load('EditMOStudent.html'); // vai carregar a pagina de acordos da view
+			$loader = new \Twig\Loader\FilesystemLoader('app/View/');
+			$twig = new \Twig\Environment($loader);
+			$template = $twig->load('EditMOStudent.html'); // vai carregar a pagina de acordos da view
 
-		// 	$parametros = array();
+			$parametros = array();
 			
 
-		// 	 $mobStd = MobOutEstudante::GetMobilidadeById($id);
+			 $mobStd = MobOutEstudante::GetMobilidadeById($id);
 
-        //      $parametros['idEstudante'] = $mobStd->idEstudante;
-        //      $parametros['EstudanteMobOut_InstituicaoDest'] = $mobStd->EstudanteMobOut_InstituicaoDest;
-        //      $parametros['EstudanteMobOut_PaisDest'] = $mobStd->EstudanteMobOut_PaisDest;
-        //      $parametros['EstudanteMobOut_CartaAceitacao'] = $mobStd->EstudanteMobOut_CartaAceitacao;
-        //      $parametros['EstudanteMobOut_Programa'] = $mobStd->EstudanteMobOut_Programa;
-        //      $parametros['EstudanteMobOut_email'] = $mobStd->EstudanteMobOut_email;
-        //      $parametros['EstudanteMobOut_Campus'] = $mobStd->EstudanteMobOut_Campus;
-        //      $parametros['EstudanteMobOut_Grau'] = $mobStd->EstudanteMobOut_Grau;
-        //      $parametros['EstudanteMobOut_Nome'] = $mobStd->EstudanteMobOut_Nome;
-        //      $parametros['EstudanteMobOut_Curso'] = $mobStd->EstudanteMobOut_Curso;
-        //      $parametros['EstudanteMobOut_Matricula'] = $mobStd->EstudanteMobOut_Matricula;
-        //      $parametros['EstudanteMobOut_Modalidade'] = $mobStd->EstudanteMobOut_Modalidade;
-        //      $parametros['EstudanteMobOut_cpf'] = $mobStd->EstudanteMobOut_cpf;
-        //      $parametros['EstudanteMobOut_identidade'] = $mobStd->EstudanteMobOut_identidade;
-        //      $parametros['EstudanteMobOut_celular'] = $mobStd->EstudanteMobOut_celular;
-        //      $parametros['EstudanteMobOut_endereco'] = $mobStd->EstudanteMobOut_endereco;
-        //      $parametros['EstudanteMobOut_nomeFamiliar'] = $mobStd->EstudanteMobOut_nomeFamiliar;
-        //      $parametros['EstudanteMobOut_TelefoneFamiliar'] = $mobStd->EstudanteMobOut_TelefoneFamiliar;
-        //      $parametros['EstudanteMobOut_EmailFamiliar'] = $mobStd->EstudanteMobOut_EmailFamiliar;
-        //      $parametros['EstudanteMobOut_GrauParentesco'] = $mobStd->EstudanteMobOut_GrauParentesco;
-        //      $parametros['EstudanteMobOut_DataSaida'] = $mobStd->EstudanteMobOut_DataSaida;
-        //      $parametros['EstudanteMobOut_DataRetorno'] = $mobStd->EstudanteMobOut_DataRetorno;
-        //      $parametros['EstudanteMobOut_auxilioFinanceiro'] = $mobStd->EstudanteMobOut_auxilioFinanceiro;
-        //      $parametros['EstudanteMobOut_TipoAuxilio'] = $mobStd->EstudanteMobOut_TipoAuxilio;
-        //      $parametros['EstudanteMobOut_DescTipoAuxilio'] = $mobStd->EstudanteMobOut_DescTipoAuxilio;
-        //      $parametros['EstudanteMobOut_FinalidadeIntercambio'] = $mobStd->EstudanteMobOut_FinalidadeIntercambio;
+             $parametros['idEstudante'] = $mobStd->idEstudante;
+             $parametros['EstudanteMobOut_InstituicaoDest'] = $mobStd->EstudanteMobOut_InstituicaoDest;
+             $parametros['EstudanteMobOut_PaisDest'] = $mobStd->EstudanteMobOut_PaisDest;
+             $parametros['EstudanteMobOut_CartaAceitacao'] = $mobStd->EstudanteMobOut_CartaAceitacao;
+             $parametros['EstudanteMobOut_Programa'] = $mobStd->EstudanteMobOut_Programa;
+             $parametros['EstudanteMobOut_email'] = $mobStd->EstudanteMobOut_email;
+             $parametros['EstudanteMobOut_Campus'] = $mobStd->EstudanteMobOut_Campus;
+             $parametros['EstudanteMobOut_Grau'] = $mobStd->EstudanteMobOut_Grau;
+             $parametros['EstudanteMobOut_Nome'] = $mobStd->EstudanteMobOut_Nome;
+             $parametros['EstudanteMobOut_Curso'] = $mobStd->EstudanteMobOut_Curso;
+             $parametros['EstudanteMobOut_Matricula'] = $mobStd->EstudanteMobOut_Matricula;
+             $parametros['EstudanteMobOut_Modalidade'] = $mobStd->EstudanteMobOut_Modalidade;
+             $parametros['EstudanteMobOut_cpf'] = $mobStd->EstudanteMobOut_cpf;
+             $parametros['EstudanteMobOut_identidade'] = $mobStd->EstudanteMobOut_identidade;
+             $parametros['EstudanteMobOut_celular'] = $mobStd->EstudanteMobOut_celular;
+             $parametros['EstudanteMobOut_endereco'] = $mobStd->EstudanteMobOut_endereco;
+             $parametros['EstudanteMobOut_nomeFamiliar'] = $mobStd->EstudanteMobOut_nomeFamiliar;
+             $parametros['EstudanteMobOut_TelefoneFamiliar'] = $mobStd->EstudanteMobOut_TelefoneFamiliar;
+             $parametros['EstudanteMobOut_EmailFamiliar'] = $mobStd->EstudanteMobOut_EmailFamiliar;
+             $parametros['EstudanteMobOut_GrauParentesco'] = $mobStd->EstudanteMobOut_GrauParentesco;
+             $parametros['EstudanteMobOut_DataSaida'] = $mobStd->EstudanteMobOut_DataSaida;
+             $parametros['EstudanteMobOut_DataRetorno'] = $mobStd->EstudanteMobOut_DataRetorno;
+             $parametros['EstudanteMobOut_auxilioFinanceiro'] = $mobStd->EstudanteMobOut_auxilioFinanceiro;
+             $parametros['EstudanteMobOut_TipoAuxilio'] = $mobStd->EstudanteMobOut_TipoAuxilio;
+             $parametros['EstudanteMobOut_DescTipoAuxilio'] = $mobStd->EstudanteMobOut_DescTipoAuxilio;
+             $parametros['EstudanteMobOut_FinalidadeIntercambio'] = $mobStd->EstudanteMobOut_FinalidadeIntercambio;
 			
 	   
 
-		// 	$conteudo = $template->render($parametros);
-		// 	echo $conteudo;
+			$conteudo = $template->render($parametros);
+			echo $conteudo;
 
-		// }
+		}
 
-		// public function Update(){ // alterar do banco de dados do banco de dados 
+		public function Update(){ // alterar do banco de dados do banco de dados 
 
-		// 	try{
+			try{
 				
-		// 		Acordos::updateAgreements($_POST); // chama a função que esta no model para alterar
-		// 		echo '<script>alert("Mobilidade alterada com sucesso!");</script>';
-		// 		 echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
-		// 	}
-		// 	 catch (Exception $e) {
-		// 		echo '<script>alert("'.$e->getMessage().'");</script>';
-		// 		 echo '<script>location.href="/sistema/?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
-		// 	}
-		// }
+				MobOutEstudante::updateMobOutStudent($_POST); // chama a função que esta no model para alterar
+				echo '<script>alert("Mobilidade alterada com sucesso!");</script>';
+				 echo '<script>location.href="?pagina=MobOut&metodo=GetAllMobOutStudents"</script>';
+			}
+			 catch (Exception $e) {
+				echo '<script>alert("'.$e->getMessage().'");</script>';
+				
+                 echo '<script>location.href="/?pagina=MobOut&metodo=Mudar&id'.$_POST['idEstudante'] .'"</script>';
+			}
+		}
 
 
 
-    // TERMINAR OS OUTROS METODOS AMANHA 
+    
    
 }

@@ -146,10 +146,10 @@ class Acordos
             $sql->bindValue(':TermosAditivos', $params['TermosAditivos'],PDO::PARAM_STR);
             $sql->bindValue(':StatusRenovacao', $params['StatusRenovacao'],PDO::PARAM_STR);
             $sql->bindValue(':DOU', $params['DOU'],PDO::PARAM_STR);
-             $sql->bindValue(':dataRenovacao', $params['dataRenovacao'],PDO::PARAM_STR);
+            $sql->bindValue(':dataRenovacao', $params['dataRenovacao'],PDO::PARAM_STR);
             $sql->bindValue(':atividadesPrevistas', $params['atividadesPrevistas'],PDO::PARAM_STR);
-             $sql->bindValue(':publicoAlvo', $params['publicoAlvo'],PDO::PARAM_STR);
-             $sql->bindValue(':idAcordos', $params['idAcordos'] , PDO::PARAM_INT);
+            $sql->bindValue(':publicoAlvo', $params['publicoAlvo'],PDO::PARAM_STR);
+            $sql->bindValue(':idAcordos', $params['idAcordos'] , PDO::PARAM_INT);
 
 
             if ($sql->execute()) {
