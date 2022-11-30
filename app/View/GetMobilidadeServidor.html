@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="Joice Cristina" content="">
+
+    <link href="css\forms.css" rel="stylesheet">
+
+</head>
+<body>
+    
+
+    <section id="container">
+        <p> Mobilidade Out - Servidores</p>
+
+        <form>
+        <div class="row">
+            <div class="row">
+            <div class="col">
+                <label for="Nome"> Nome do Servidor  </label>
+                <input type="text" disabled value="{{ServidorMobOut_Nome}}" class="form-control">
+            </div>
+            <div class="col">
+                <label for="Email"> Email </label>
+                <input type="email" disabled value="{{ServidorMobOut_email}}" class="form-control">
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="matricula"> Matricula </label>
+                    <input type="text" disabled value="{{ServidorMobOut_Matricula}}" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="Campus"> Campus </label>
+                    <input type="text" disabled value="{{ServidorMobOut_Campus}}" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col">
+                    <label for="Telefone"> Telefone </label>
+                    <input type="text" disabled value="{{ServidorMobOut_celular}}" class="form-control" required>
+                </div>
+                <div class="col">
+                    <label for="identidade"> Identidade </label>
+                    <input type="text" disabled value="{{ServidorMobOut_identidade}}" class="form-control">
+                </div>
+
+            </div>
+        
+            <div class="row">
+                <div class="col">
+                        <label for="cpf"> CPF </label>
+                        <input type="text" value="{{ServidorMobOut_cpf}}" disabled class="form-control">
+                </div>
+                <div class="col">
+                    <label for="Celular"> Celular </label>
+                    <input type="text" value="{{ServidorMobOut_celular}}" disabled class="form-control" required>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="form-group">
+                    <label for="inputAddress">Endereço no Brasil</label>
+                    <input type="text" value="{{ServidorMobOut_endereco}}" disabled class="form-control" id="inputAddress">
+                </div>
+
+            </div>
+               
+                <div class="row">
+                    <div class="col">
+                        <label for=""> Nome do Familiar </label>
+                        <input type="text" value="{{ServidorMobOut_nomeFamiliar}}" disabled class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for=""> Grau de Parentesco </label>
+                        <input type="text" value="{{ServidorMobOut_GrauParentesco}}" disabled class="form-control">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="telefone Familiar"> Telefone do Familiar </label>
+                        <input type="text" value="{{ServidorMobOut_TelefoneFamiliar}}" disabled class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for=""> Email do Familiar </label>
+                        <input type="email" value="{{ServidorMobOut_EmailFamiliar}}" disabled class="form-control">
+                    </div>
+
+                </div>
+               
+           
+                <div class="row">
+                    <div class="col">
+                        <label for="InstitDestino">Instituição de Destino</label>
+                        <input type="text" value="{{ServidorMobOut_InstituicaoDest}}" disabled class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="PaisDestino">País da Instituição</label>
+                        <input type="text" value="{{ServidorMobOut_PaisDest}}" disabled class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                           
+                            <label for="formFile" class="form-label">Carta de Aceitação</label>
+                            <a href="assets\files\{{ServidorMobOut_CartaAceitacao}}"><input class="form-control"   value="{{ServidorMobOut_CartaAceitacao}}" name="ServidorMobOut_CartaAceitacao" disabled type="text" id="formFile"></a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="Arquivo1"> Finalidade do Intercambio </label>
+                        <input type="text" value="{{ServidorMobOut_FinalidadeIntercambio}}" disabled class="form-control">
+                        </div>
+
+                </div>
+            
+            
+            <div class="row">
+                       
+               
+                        <div class="col">
+                            <label for="Arquivo1"> Data de Saida </label>
+                            <input type="date" disabled value="{{ServidorMobOut_DataSaida}}" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="Arquivo1"> Data de Retorno </label>
+                            <input type="date" disabled value="{{ServidorMobOut_DataRetorno}}" class="form-control">
+                        </div>
+                
+                 </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="aux">
+                        <label for="Arquivo1"> Auxilio Financeiro </label><br>
+                        <div class="form-check form-check-inline">
+                          <!-- <label for="inlineRadio"><input class="form-check-input" disabled type="text" name="inlineRadio" id="inlineRadio1" value="{{ServidorMobOut_auxilioFinanceiro}}"></label>  -->
+                        
+                          <label for="inlineRadio2"><input  disabled type="text" name="inlineRadio" id="inlineRadio2" value="{{ServidorMobOut_auxilioFinanceiro}}"></label> 
+                         
+                           
+                                
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                
+                    <div class="row">
+                        <div class="col">
+                            <div class="checkbox">
+                                <legend> Tipo de Auxilio</legend>
+            
+                                <input class="form-check-input"   disabled type="checkbox" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa da Instituição de Origem
+                                </label><br>
+                                <input class="form-check-input"  disabled type="checkbox" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa da Instituição Anfritriã
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Bolsa de Programas Especificos
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Auxilio Viagem
+                                </label><br>
+                                <input class="form-check-input" disabled type="checkbox" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Auxilio Moradia
+                                </label><br>
+                                <input class="form-check-input" type="checkbox" name="Outros" value="{{ServidorMobOut_TipoAuxilio}}" id="flexCheckDefault">
+                                <label class="form-check-label" id="outro"  for="flexCheckDefault">
+                                    Outros
+                                </label><br>
+                                
+                            </div>
+                                
+                        </div>
+                    </div>
+                    <div class="teste"></div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="DescAux"> Descrição do Auxilio </label>
+                                <input type="text" disabled value="{{ServidorMobOut_DescTipoAuxilio}}"  class="form-control">
+                        </div>
+                    </div>
+                    
+            </div>
+            
+
+
+                <div class="butao">
+                    <button type="button" class="btn btn-danger"> <a href="?pagina=MobOut&metodo=Delete&id={{idEstudante}}"> EXCLUIR</button></a>
+                    <button type="button" class="btn btn-primary"> <a href="?pagina=MobOut&metodo=Mudar&id={{idEstudante}}"> EDITAR</button> </a>
+                </div>
+        </div>
+
+    </form>
+
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+
+
+<script src="js\front.js"></script>
+<script src="js\bootstrap.bundle.min.js"></script>
+<script src="js\jquery-3.6.0.js"></script>      

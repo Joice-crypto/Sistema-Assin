@@ -90,11 +90,11 @@
 			try{
 				Acordos::insertAgreements($_POST);
 				echo json_encode(array('status' => 'success', 'message' => "Acordo cadastrado com sucesso!"));
-				echo '<script>location.href="?pagina=Acordos&metodo=index"</script>';
+				echo '<script>location.href="/?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				echo '<script>location.href="?pagina=Acordos&metodo=create"</script>';
+				echo '<script>location.href="/?pagina=Acordos&metodo=create"</script>';
 			}
 		}
 
@@ -103,11 +103,11 @@
 				
 				Acordos::deleteAgreements($paramID); // leva para a função do model 
 				echo json_encode(array('status' => 'success', 'message' => "Acordo deletado com sucesso!"));
-				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
+				echo '<script>location.href="?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
+				echo '<script>location.href="?pagina=Acordos&metodo=index"</script>';
 			}
 		}
 
@@ -158,11 +158,11 @@
 				
 				Acordos::updateAgreements($_POST); // chama a função que esta no model para alterar
 				echo '<script>alert("Publicação alterada com sucesso!");</script>';
-				 echo '<script>location.href="/sistema/?pagina=Acordos&metodo=index"</script>';
+				 echo '<script>location.href="?pagina=Acordos&metodo=index"</script>';
 			}
 			 catch (Exception $e) {
 				echo '<script>alert("'.$e->getMessage().'");</script>';
-				 echo '<script>location.href="/sistema/?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
+				 echo '<script>location.href="?pagina=Acordos&metodo=Change&Id='.$_POST['idAcordos'] .'"</script>';
 			}
 		}
 

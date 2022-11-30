@@ -9,7 +9,7 @@ class MobOutEstudante
 
         $con = Connection::getConn();
          
-         $sql = "SELECT * from `EstudanteMobOut`  ORDER BY idEstudante DESC";
+         $sql = "SELECT * from `EstudanteMobOut`";
          $sql = $con->prepare($sql);
          $sql->execute();
  
@@ -146,7 +146,7 @@ class MobOutEstudante
 
             $con = Connection::getConn(); // ACABAR DE FAZER
 
-			$sql = "UPDATE EstudanteMobOut  SET  EstudanteMobOut_InstituicaoDest = :EstudanteMobOut_InstituicaoDest, EstudanteMobOut_PaisDest = :EstudanteMobOut_PaisDest, EstudanteMobOut_Programa = :EstudanteMobOut_Programa
+			$sql = "UPDATE `EstudanteMobOut`  SET  EstudanteMobOut_InstituicaoDest = :EstudanteMobOut_InstituicaoDest, EstudanteMobOut_PaisDest = :EstudanteMobOut_PaisDest, EstudanteMobOut_Programa = :EstudanteMobOut_Programa,
             EstudanteMobOut_Campus = :EstudanteMobOut_Campus, EstudanteMobOut_Grau = :EstudanteMobOut_Grau, EstudanteMobOut_Nome = :EstudanteMobOut_Nome, EstudanteMobOut_Curso = :EstudanteMobOut_Curso, 
             EstudanteMobOut_Matricula = :EstudanteMobOut_Matricula, EstudanteMobOut_Modalidade = :EstudanteMobOut_Modalidade, EstudanteMobOut_cpf = :EstudanteMobOut_cpf, EstudanteMobOut_identidade = :EstudanteMobOut_identidade,
             EstudanteMobOut_email = :EstudanteMobOut_email, EstudanteMobOut_celular = :EstudanteMobOut_celular, EstudanteMobOut_endereco = :EstudanteMobOut_endereco, EstudanteMobOut_nomeFamiliar = :EstudanteMobOut_nomeFamiliar,
@@ -155,7 +155,36 @@ class MobOutEstudante
             EstudanteMobOut_TipoAuxilio = :EstudanteMobOut_TipoAuxilio, EstudanteMobOut_DescTipoAuxilio = :EstudanteMobOut_DescTipoAuxilio, EstudanteMobOut_FinalidadeIntercambio = :EstudanteMobOut_FinalidadeIntercambio, 
             EstudanteMobOut_CartaAceitacao = :EstudanteMobOut_CartaAceitacao WHERE idEstudante = :idEstudante";
 
-            $sql = $con->prepare($sql);
+             $sql = $con->prepare($sql);
+            // $sql->execute(array(':EstudanteMobOut_InstituicaoDest', $params['EstudanteMobOut_InstituicaoDest'], PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_PaisDest', $params['EstudanteMobOut_PaisDest'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Programa', $params['EstudanteMobOut_Programa'], PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Campus', $params['EstudanteMobOut_Campus'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Grau', $params['EstudanteMobOut_Grau'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Nome', $params['EstudanteMobOut_Nome'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Curso', $params['EstudanteMobOut_Curso'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Matricula', $params['EstudanteMobOut_Matricula'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_Modalidade', $params['EstudanteMobOut_Modalidade'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_cpf', $params['EstudanteMobOut_cpf'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_identidade', $params['EstudanteMobOut_identidade'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_email', $params['EstudanteMobOut_email'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_celular', $params['EstudanteMobOut_celular'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_endereco', $params['EstudanteMobOut_endereco'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_nomeFamiliar', $params['EstudanteMobOut_nomeFamiliar'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_TelefoneFamiliar', $params['EstudanteMobOut_TelefoneFamiliar'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_EmailFamiliar', $params['EstudanteMobOut_EmailFamiliar'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_GrauParentesco', $params['EstudanteMobOut_GrauParentesco'] , PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_DataSaida', $params['EstudanteMobOut_DataSaida'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_DataRetorno', $params['EstudanteMobOut_DataRetorno'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_auxilioFinanceiro', $params['EstudanteMobOut_auxilioFinanceiro'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_TipoAuxilio', $params['EstudanteMobOut_TipoAuxilio'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_DescTipoAuxilio', $params['EstudanteMobOut_DescTipoAuxilio'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_FinalidadeIntercambio', $params['EstudanteMobOut_FinalidadeIntercambio'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_CartaAceitacao', $params['EstudanteMobOut_CartaAceitacao'],PDO::PARAM_STR,
+            //                     ':EstudanteMobOut_GrauParentesco', $params['EstudanteMobOut_GrauParentesco'] , PDO::PARAM_STR,
+            //                     ':idEstudante', $params['idEstudante'],PDO::PARAM_INT));
+
+
 
             $sql->bindValue(':EstudanteMobOut_InstituicaoDest', $params['EstudanteMobOut_InstituicaoDest'], PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_PaisDest', $params['EstudanteMobOut_PaisDest'],PDO::PARAM_STR);
@@ -182,10 +211,9 @@ class MobOutEstudante
             $sql->bindValue(':EstudanteMobOut_DescTipoAuxilio', $params['EstudanteMobOut_DescTipoAuxilio'],PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_FinalidadeIntercambio', $params['EstudanteMobOut_FinalidadeIntercambio'],PDO::PARAM_STR);
             $sql->bindValue(':EstudanteMobOut_CartaAceitacao', $params['EstudanteMobOut_CartaAceitacao'],PDO::PARAM_STR);
-            $sql->bindValue(':idEstudante', $params['idEstudante'],PDO::PARAM_INT);
             $sql->bindValue(':EstudanteMobOut_GrauParentesco', $params['EstudanteMobOut_GrauParentesco'] , PDO::PARAM_STR);
-
-
+            $sql->bindValue(':idEstudante', $params['idEstudante'],PDO::PARAM_INT);
+            
             
 
         $resultado =  $sql->execute();
