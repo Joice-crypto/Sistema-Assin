@@ -1,158 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="Joice Cristina" content="">
 
+    <link href="css\forms.css" rel="stylesheet">
 
-<link href="/css/forms.css" rel="stylesheet">
+</head>
+<body>
+    
 
-<section id="container">
-    <p> Cadastro de Mobilidade Out - Professores/Tecnicos</p>
+    <section id="container">
+        <p>Cadastro de Mobilidade Out - Servidores</p>
 
-    <form>
+        <form>
         <div class="row">
+            <div class="row">
             <div class="col">
-                <label for="Nome"> Nome do Servidor </label>
-                <input type="text" class="form-control">
+                <label for="Nome"> Nome do Servidor  </label>
+                <input type="text"  value="{{Servidor_Nome}}" class="form-control">
             </div>
             <div class="col">
                 <label for="Email"> Email </label>
-                <input type="email" class="form-control">
+                <input type="email"  value="{{Servidor_email}}" class="form-control">
             </div>
-            <div class="col">
-                <label for="matricula"> Matricula </label>
-                <input type="text" class="form-control" required>
             </div>
-
-
+            <div class="row">
                 <div class="col">
-                    <label for="Nome"> Curso </label>
-                    <input type="text" class="form-control">
+                    <label for="matricula"> Matricula </label>
+                    <input type="text"  value="{{Servidor_Matricula}}" class="form-control" required>
                 </div>
                 <div class="col">
                     <label for="Campus"> Campus </label>
-                    <input type="text" class="form-control">
+                    <input type="text"  value="{{Servidor_Campus}}" class="form-control">
                 </div>
             </div>
             <div class="row">
-            <div class="col">
-                <label for="InteressePesquisa"> Interesses de Pesquisa </label>
-                <input type="text" class="form-control">
-            </div>
-            <?php // AQUI VAI SER SE A PESSOA FOR UM TECNICO (fAZER IF COM O TWIG) ?>
-            <div class="row">
+                
                 <div class="col">
-                <label for="setor"> Setor que trabalha </label>
-                <input type="text" class="form-control">
+                    <label for="Telefone"> Telefone </label>
+                    <input type="text"  value="{{Servidor_celular}}" class="form-control" required>
                 </div>
                 <div class="col">
-                <label for="atuacao"> Area de atuação </label>
-                <input type="text" class="form-control">
-                  
+                    <label for="identidade"> Identidade </label>
+                    <input type="text"  value="{{Servidor_identidade}}" class="form-control">
                 </div>
-            </div>
-           
 
+            </div>
+        
             <div class="row">
                 <div class="col">
                         <label for="cpf"> CPF </label>
-                        <input type="text" class="form-control">
+                        <input type="text" value="{{Servidor_cpf}}"  class="form-control">
                 </div>
-                <div class="col">
-                    <label for="Celular"> Celular </label>
-                    <input type="number" class="form-control" required>
-                </div>
-            </div>
-                
                 <div class="form-group">
-                    <label for="inputAddress">Endereço</label>
-                    <input type="text" class="form-control" id="inputAddress">
+                    <label for="inputAddress">Endereço no Brasil</label>
+                    <input type="text" value="{{Servidor_endereco}}"  class="form-control" id="inputAddress">
                 </div>
-            <div class="row">
-                    <div class="col">
-                    <label for=""> Nome do Familiar </label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                    <label for=""> Grau de Parentesco </label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                    <label for="telefone Familiar"> Telefone do Familiar </label>
-                    <input type="number" class="form-control">
-                </div>
-                <div class="col">
-                    <label for=""> Email do Familiar </label>
-                    <input type="email" class="form-control">
-
-                </div>
-            </div>
                 
+            </div>  
+           
                 <div class="row">
                     <div class="col">
                         <label for="InstitDestino">Instituição de Destino</label>
-                        <input type="text" class="form-control">
+                        <input type="text" value="{{Servidor_InstituicaoDest}}"  class="form-control">
                     </div>
                     <div class="col">
                         <label for="PaisDestino">País da Instituição</label>
-                        <input type="text" class="form-control">
+                        <input type="text" value="{{Servidor_PaisDest}}"  class="form-control">
                     </div>
                 </div>
-            
-            <div class="col">
-                <div class="mb-3">
-                    <label for="formFile" class="form-label">Carta de Aceitação</label>
-                    <input class="form-control" type="file" id="formFile">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group col-md-4">
-                        <label for="Arquivo1"> Finalidade do Intercambio </label>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                
-            </div>
 
-
-            <div class="col">
-                <div class="aux">
-                    <label for="Arquivo1"> Auxilio Financeiro </label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Sim</label>
-
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Não</label>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="Arquivo1"> Endereço no Exterior </label>
+                            <input type="text" value="{{Servidor_EnderExterior}}"  class="form-control">
                         </div>
                     </div>
-                </div>
-
-                <div class="col">
-                    <label for="tipoAux"> Tipo de Auxilio </label>
-                    <input type="text" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                        <label for="Arquivo1"> Data de Saida </label>
-                        <input type="date" class="form-control">
-                </div>
-                <div class="col">
-                        <label for="Arquivo1"> Data de Retorno </label>
-                        <input type="date" class="form-control">
+                    <div class="col">
+                        <label for="Arquivo1"> Cargo do Servidor </label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected></option>
+                            <option name="Servidor_Cargo" value="Tecnico">Tecnico</option>
+                            <option name="Servidor_Cargo" value="Servidor">Professor</option>
+                          </select>
+                      
                     </div>
+
+                    <div class="CargoProfessor">
+                        <div class="row">
+                            <div class="col">
+                                <label for="Arquivo1"> Curso do Professor </label>
+                                <input type="text"  name="CursoProfessor" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="Arquivo1"> Campus </label>
+                                <input type="text"   name="CampusProfessor" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="Arquivo1"> Interesses de Pesquisa </label>
+                                <input type="text"  name="InteressesProfessor" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="Arquivo1"> Titulação do Professor </label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected></option>
+                                    <option name="TitulacaoProfessor" value="1">Mestre</option>
+                                    <option name="TitulacaoProfessor" value="2">Doutor</option>
+                                    <option name="TitulacaoProfessor" value="3">Pós-Doutor</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="CargoTecnico">
+                        <div class="row">
+                            <div class="col">
+                                <label for="Arquivo1"> Setor do Tecnico </label>
+                                <input type="text"  name="SetorTecnico" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="Arquivo1"> Campus do Tecnico </label>
+                                <input type="text"   name="CampusTecnico" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="Arquivo1"> Interesses de Pesquisa </label>
+                                <input type="text"  name="InteressesTecnico" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="Arquivo1"> Titulação do Professor </label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option name="AreaTecnico" selected>Open this select menu</option>
+                                    <option name="AreaTecnico" value="1">Mestre</option>
+                                    <option name="AreaTecnico" value="2">Doutor</option>
+                                    <option name="AreaTecnico" value="3">Pós-Doutor</option>
+                                  </select>
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </div>
             
+                    <div class="row">
+                        <div class="col">
+                            <label for="Arquivo1"> Data de Saida </label>
+                            <input type="date"  value="{{Servidor_DataSaida}}" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="Arquivo1"> Data de Retorno </label>
+                            <input type="date"  value="{{Servidor_DataRetorno}}" class="form-control">
+                        </div>
+                    </div>
+          
 
-            <div class="butao">
-                <button type="button" class="btn btn-secondary btn-lg">Enviar</button>
-            </div>
+
+                
+                <div class="butao">
+                    <button type="submit" class="btn btn-primary">ENVIAR</button>
+                </div>
+               
         </div>
 
     </form>
-    
-</section>
-<script src="/js/bootstrap.bundle.min.js"></script>
-<script src="/js/jquery-3.6.0.js"></script>    
 
+</section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+
+
+<script src="js\front.js"></script>
+<script src="js\bootstrap.bundle.min.js"></script>
+<script src="js\jquery-3.6.0.js"></script>      
  

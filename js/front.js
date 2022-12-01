@@ -25,6 +25,14 @@
 
 });
 
+$('.CargoTecnico').hide();
+$('.CargoProfessor').hide();
+$('select.option[name="Servidor_Cargo"]').change(function () {
+
+console.log("OOOOOOOIIIIIIII");
+   
+
+});
 
 // $('.checkbox').$function(){
 
