@@ -108,6 +108,20 @@ class MobOutController
 
     }
 
+    public function insertServidor(){ // vou pegar os dados do create e jogar no banco de dados para inserir
+         
+        
+        try{
+            MobOutServidor::insertServidor($_POST);
+            echo json_encode(array('status' => 'success', 'message' => "Servidor cadastrado com sucesso!"));
+            echo '<script>location.href="?pagina=MobOut&metodo=getAllMobOutServidor"</script>';
+        }
+         catch (Exception $e) {
+            echo '<script>alert("'.$e->getMessage().'");</script>';
+            echo '<script>location.href="?pagina=MOEstudante&metodo=createServidor"</script>';
+        }
+    }
+
 
 
     // AQUI COMEÇA O DE ESTUDANTE

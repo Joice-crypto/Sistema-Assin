@@ -61,7 +61,7 @@ class MobOutEstudante
             or empty($dadosPost['EstudanteMobOut_Grau']) or empty($dadosPost['EstudanteMobOut_DataRetorno']) or empty($dadosPost['EstudanteMobOut_auxilioFinanceiro']) 
             or empty($dadosPost['EstudanteMobOut_FinalidadeIntercambio']) or empty($dadosPost['EstudanteMobOut_Campus']) or empty($dadosPost['EstudanteMobOut_TelefoneFamiliar']) or empty($dadosPost['EstudanteMobOut_email'])) // tem que preencher todos os campo 
             { 
-            	throw new Exception(" todos os campos");
+            	throw new Exception("Preencha todos os campos");
 
 				return false;
 			}
