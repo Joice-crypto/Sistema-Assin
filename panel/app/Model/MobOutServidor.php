@@ -1,6 +1,6 @@
 <?php
 
-require_once("app\Model\File.php");
+require_once("panel\app\Model\File.php");
 
 class MobOutServidor
 {
@@ -99,28 +99,38 @@ class MobOutServidor
                     $InteressesTecnico = $dadosPost['InteressesTecnico'];
                     $AreaTecnico = $dadosPost['AreaTecnico'];
 
-                    $sql2 = $con->prepare('INSERT INTO tecnico (SetorTecnico,CampusTecnico,InteressesTecnico,AreaTecnico) VALUES (?,?,?,?');
+                    $sql2 = $con->prepare('INSERT INTO tecnico (SetorTecnico,CampusTecnico,InteressesTecnico,AreaTecnico,idTecnico) VALUES (?,?,?,?,?');
 
                     $sql->bindValue(1, $SetorTecnico, PDO::PARAM_STR);
                     $sql->bindValue(2, $CampusTecnico,PDO::PARAM_STR);
                     $sql->bindValue(3, $InteressesTecnico, PDO::PARAM_STR);
                     $sql->bindValue(4, $AreaTecnico,PDO::PARAM_STR);
-                    $sql->bindValue(5, $dadosPost['Servidor_Nome'],PDO::PARAM_STR);
+                    $sql->bindValue(5, $ID,PDO::PARAM_STR);
               }
               else if($dadosPost['Servidor_Cargo'] == 'Professor'){
                 $CursoProfessor = $dadosPost['CursoProfessor'];
                 $CampusProfessor = $dadosPost['CampusProfessor'];
                 $InteressesProfessor = $dadosPost['InteressesProfessor'];
                 $TitulacaoProfessor = $dadosPost['TitulacaoProfessor'];
+
+                $sql2 = $con->prepare('INSERT INTO professor (CursoProfessor,CampusProfessor,InteressesProfessor,TitulacaoProfessor,idProfessor) VALUES (?,?,?,?,?');
+
+                $sql->bindValue(1, $CursoProfessor, PDO::PARAM_STR);
+                $sql->bindValue(2, $CampusProfessor,PDO::PARAM_STR);
+                $sql->bindValue(3, $InteressesProfessor, PDO::PARAM_STR);
+                $sql->bindValue(4, $TitulacaoProfessor,PDO::PARAM_STR);
+                $sql->bindValue(5, $ID,PDO::PARAM_STR);
+
+
               }
 
                 
             }
 
-        $res =  $sql->execute();
+        $res =  $sql2->execute();
 
         if ($res === 0) {
-            throw new Exception("Falha ao cadastrar acordo");
+            throw new Exception("Falha ao cadastrar Servidor");
 
             return false;
         }

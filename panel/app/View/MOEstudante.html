@@ -4,7 +4,7 @@
 <meta name="Joice Cristina" content="">
 <head>
 
-  <link href="css\forms.css" rel="stylesheet">
+  <link href="panel\css\forms.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,29 +23,29 @@
 
             <div class="card-body">
             </div>
-            <a href="/?pagina=MobOut&metodo=create"> <button type="button"  class="btn btn-primary w-100 mb-3">Cadastrar Servidor em Mobilidade Out</button></a>
+            <a href="/?pagina=MobOut&metodo=create"> <button type="button"  class="btn btn-primary w-100 mb-3">Cadastrar Aluno em Mobilidade Out</button></a>
             <div id="Alerts"></div>
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nome do Servidor </th>
+                     <th>Nome Do Estudante</th>
                       <th>Insituição de Destino</th>
-                      <th>Cargo</th>
+                      <th>Curso</th>
                       <th>País</th>
                       <th>Data de Saída</th>
                       <th>Data de Retorno</th>
                       
                     </tr>
                   </thead>
-                  {% for Servidor in ServidorMobOut %} 
+                  {% for Estudante in MobOutEstudante %} 
                   <tbody>
-                    <td><a href="?pagina=MobOut&metodo=GetMobilidade&id={{Servidor.idServidor}}"> {{Servidor.Servidor_Nome}} </a></td>
-                    <td>{{Servidor.Servidor_InstituicaoDest}}</td>
-                    <td>{{Servidor.Servidor_Curso}}</td>
-                    <td>{{Servidor.Servidor_PaisDest}}</td>
-                    <td>{{Servidor.Servidor_DataSaida}}</td>
-                    <td>{{Servidor.Servidor_DataRetorno}}</td>
+                    <td><a href="?pagina=MobOut&metodo=GetMobilidade&id={{Estudante.idEstudante}}"> {{Estudante.EstudanteMobOut_Nome}} </a></td>
+                    <td>{{Estudante.EstudanteMobOut_InstituicaoDest}}</td>
+                    <td>{{Estudante.EstudanteMobOut_Curso}}</td>
+                    <td>{{Estudante.EstudanteMobOut_PaisDest}}</td>
+                    <td>{{Estudante.EstudanteMobOut_DataSaida}}</td>
+                    <td>{{Estudante.EstudanteMobOut_DataRetorno}}</td>
                     
                   </tbody>
                   {% endfor %}

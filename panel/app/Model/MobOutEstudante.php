@@ -1,6 +1,6 @@
 <?php
 
-require_once("app\Model\File.php");
+require_once("panel\app\Model\File.php");
 
 class MobOutEstudante
 {

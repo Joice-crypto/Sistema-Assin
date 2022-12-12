@@ -18,6 +18,19 @@
 
 }
 
+.text-end  {
+  display: inline;
+  position: relative;
+  right: -95px;
+  padding-top:50px;
+}
+
+#Procurar {
+  display: inline;
+  position: relative;
+  right: -95px;
+  padding-top: 50px;
+}
 
 
 header {
