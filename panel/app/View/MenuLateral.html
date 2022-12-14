@@ -1,17 +1,11 @@
-
-
 <!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="panel\css\Estrutura.css" />
-    <script src="https://kit.fontawesome.com/4e34a236af.js" crossorigin="anonymous"></script>
-    <!-- CSS only -->
-    <link rel="stylesheet" href="panel\css\bootstrap.min.css" />
-        <!-- Custom styles for this template-->
+<html lang="pt-br">
+<head>
+    <meta name="Joice Cristina" content="">
+
+    <!-- Custom styles for this template-->
     <!-- <link href="./app/css/Estrutura.css" rel="stylesheet"> -->
+    <link href="panel\css\Estrutura.css" rel="stylesheet">
     
 </head>
 <body>
@@ -22,42 +16,16 @@
     <p id="titulo-principal">
       ASSESSORIA PARA ASSUNTOS INTERNACIONAIS - ASSIN
     </p>
-   
+    <div id="Procurar">
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <input type="search" class="form-control" placeholder="Procurar..." aria-label="Procurar">
+      </form>
 
-    <div class="icon-entrar">
-      
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-radius: 50%;
-    height: 70px;
-    width: 75px;">
-      <div class="container-fluid">
-        <ul class="navbar-nav d-flex flex-row">
-          <!-- Icons -->
-          <!-- Icon dropdown -->
-          <li class="nav-item me-3 me-lg-0 dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-mdb-toggle="dropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fas fa-user"></i>
-            </a>
-             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="?pagina=Login">Entrar</a></li>
-              <li><a class="dropdown-item" href="#">Editar usuario</a></li>
-             
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
     </div>
-
-
-
+   
+    <div class="text-end">
+      <a href="?pagina=Login"><button type="button" class="btn btn-light">Entrar</button></a>
+    </div>
   </header>
 
   <div class="menu-lateral" style="position: fixed;">
@@ -150,7 +118,7 @@
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li>
                 <a
-                  href="/?pagina=AdminMobOut&metodo=create"
+                  href="/?pagina=MobOut&metodo=create"
                   id="MobOutEstudante"
                   class="link-light d-inline-flex text-decoration-none rounded"
                   >Mobilidade out - Estudantes
@@ -158,7 +126,7 @@
               </li>
               <li>
                 <a
-                  href="/?pagina=AdminMobOut&metodo=createServidor"
+                  href="/?pagina=MobOut&metodo=createServidor"
                   id="MobOutProfessor"
                   class="link-light d-inline-flex text-decoration-none rounded"
                   >Mobilidade out - Professores/Tecnicos</a
@@ -174,7 +142,7 @@
               </li>
               <li>
                 <a
-                  href=""
+                  href="#"
                   id="MobInProfessor"
                   class="link-light d-inline-flex text-decoration-none rounded"
                   >Mobilidade in - Professores/Tecnicos</a
@@ -182,7 +150,7 @@
               </li>
               <li>
                 <a
-                  href="?pagina=AdminAcordos&metodo=create"
+                  href="/?pagina=Acordos&metodo=create"
                   id="AcordoInter"
                   class="link-light  d-inline-flex text-decoration-none rounded"
                   >Acordos Internacionais</a
@@ -195,34 +163,15 @@
     </div>
   </div>
 
-    <div id="fluid">
-        
-     
-
-      {{area_dinamica}}
-
-
-      
-    </div>
-    <div id="fluid2">
-        
-      {{footer}}
-
-
-      
-    </div>
-
-
-
-
-    <!-- <script src="/js/front.js"></script> -->
-    <script src="panel\js\front.js"></script>
+     <!-- <script src="/js/front.js"></script> -->
+     <script src="panel\js\front.js"></script>
    
     
-    <!-- JavaScript Bundle with Popper -->
-    <script src="panel\js\bootstrap.bundle.min.js"></script>
-    <script src="panel\js\jquery-3.6.0.js"></script>      
-    </script>
-    
-  </body>
-</html>
+     <!-- JavaScript Bundle with Popper -->
+     <script src="panel\js\bootstrap.bundle.min.js"></script>
+     <script src="panel\js\jquery-3.6.0.js"></script>      
+     </script>
+     
+   </body>
+ </html>
+ 
