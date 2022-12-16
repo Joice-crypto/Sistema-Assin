@@ -1,7 +1,7 @@
 
 <?php
 
-require_once('panel\app\Model\MobOutServidor.php');
+require_once('app\Model\MobOutServidor.php');
 
 
 class MobOutController
@@ -10,7 +10,7 @@ class MobOutController
     {
 
         try {
-            $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+            $loader = new \Twig\Loader\FilesystemLoader('app/View/');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('MobOut.html'); // apenas vai carregar a pagina inicial
             $parametros = array();
@@ -27,7 +27,7 @@ class MobOutController
     // AQUI COMEÇA O DE SERVIDOR
     public function getAllMobOutServidor(){
         try {
-            $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+            $loader = new \Twig\Loader\FilesystemLoader('app/View/');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('MOProfessor.html'); 
             $colecMobEst = MobOutServidor::getAllMobilidades(); // pega todos os servidores em mobilidade
@@ -49,7 +49,7 @@ class MobOutController
             $mobilidade = MobOutServidor::GetMobilidadeById($params); // aqui vai aparecer um acordo selecionado por ID 
             
     
-            $loader = new \Twig\Loader\FilesystemLoader('panel/app/View');
+            $loader = new \Twig\Loader\FilesystemLoader('app/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('GetMobilidadeServidor.html');
     
@@ -99,7 +99,7 @@ class MobOutController
     {
 
         try {
-            $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+            $loader = new \Twig\Loader\FilesystemLoader('app/View/');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('MOEstudante.html'); // apenas vai carregar a pagina inicial DE ESTUDANTES
             $colecMobEst = MobOutEstudante::getAllMobilidades();
@@ -123,7 +123,7 @@ class MobOutController
             $mobilidade = MobOutEstudante::GetMobilidadeById($params); // aqui vai aparecer um  selecionado por ID 
             
     
-            $loader = new \Twig\Loader\FilesystemLoader('panel/app/View');
+            $loader = new \Twig\Loader\FilesystemLoader('app/View');
             $twig = new \Twig\Environment($loader);
             $template = $twig->load('GetMobilidade.html');
     

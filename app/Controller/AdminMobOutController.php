@@ -1,6 +1,6 @@
 <?php
 
-require_once('panel\app\Model\MobOutServidor.php');
+require_once('app\Model\MobOutServidor.php');
 
 
 class AdminMobOutController
@@ -10,7 +10,7 @@ class AdminMobOutController
     public function createServidor() // vou chamar a pagina de criar um aluno em mobilidade out
     {
         
-        $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+        $loader = new \Twig\Loader\FilesystemLoader('app/View/');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('FormsMobilidadeOutProf.html'); // vai carregar a pagina da view
 
@@ -41,7 +41,7 @@ class AdminMobOutController
     public function create() // vou chamar a pagina de criar um aluno em mobilidade out
 		{
 			
-			$loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+			$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 			$twig = new \Twig\Environment($loader);
 			$template = $twig->load('FormsMobilidadeOutEst.html'); // vai carregar a pagina da view
 
@@ -85,7 +85,7 @@ class AdminMobOutController
         public function Mudar($id){
 
 			
-			$loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+			$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 			$twig = new \Twig\Environment($loader);
 			$template = $twig->load('EditMOStudent.html'); // vai carregar a pagina de acordos da view
 

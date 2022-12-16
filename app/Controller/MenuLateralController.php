@@ -7,7 +7,7 @@ class MenuLateralController
 			try {
 				
 
-				$loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+				$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 				$twig = new \Twig\Environment($loader);
 				$template = $twig->load('MenuLateral.html'); // vai carregar a pagina 
 				

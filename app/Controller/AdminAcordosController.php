@@ -7,7 +7,7 @@
 			try {
 				 
 
-				$loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+				$loader = new \Twig\Loader\FilesystemLoader('app/View/');
 				$twig = new \Twig\Environment($loader);
 				$template = $twig->load('Acordos.html'); // vai carregar a pagina de acordos da view
 				$colecAgreements = Acordos::getAllAgreements();
@@ -28,7 +28,7 @@
         public function create() // vou criar um acordo internacional
                 {
                     
-                    $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+                    $loader = new \Twig\Loader\FilesystemLoader('app/View/');
                     $twig = new \Twig\Environment($loader);
                     $template = $twig->load('FormsAcordoInter.html'); // vai carregar a pagina de acordos da view
 
@@ -68,7 +68,7 @@
                 public function Change($id){
 
                     
-                    $loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
+                    $loader = new \Twig\Loader\FilesystemLoader('app/View/');
                     $twig = new \Twig\Environment($loader);
                     $template = $twig->load('EditAcordo.html'); // vai carregar a pagina de acordos da view
 

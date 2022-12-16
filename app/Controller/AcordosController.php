@@ -7,16 +7,19 @@
 			try {
 				
 
-				$loader = new \Twig\Loader\FilesystemLoader('panel/app/View/');
-				$twig = new \Twig\Environment($loader);
+				$loader = new \Twig\Loader\FilesystemLoader('app/View/');
+				$twig = new \Twig\Environment($loader, [
+					'cache' => '/path/to/compilation_cache',
+					'auto_reload' => true,
+				]);
 				$template = $twig->load('Acordos.html'); // vai carregar a pagina de acordos da view
 				$colecAgreements = Acordos::getAllAgreements();
 				$parametros = array();
 
 				$parametros['Acordos'] = $colecAgreements; // estou mandando os acordos para a coleção de Acortodos para recuperar na view
 
-				$conteudo = $template->render($parametros);
-				echo $conteudo;
+				return $template->render($parametros);
+				
 
 				
 				
