@@ -7,6 +7,7 @@ class LoginController
 			
 			
 			try {
+				
 			
 				$loader = new \Twig\Loader\FilesystemLoader('app/view');
 				$twig = new \Twig\Environment($loader, [
@@ -14,9 +15,10 @@ class LoginController
 					'auto_reload' => true,
 				]);
 				$template = $twig->load('Login.html');
-					// $parameters['error'] = $_SESSION['msg_error'] ?? null;
-	
-				return $template->render();
+				$parameters['error'] = $_SESSION['msg_error'] ?? null;
+				$conteudo = $template->render($parameters);
+				echo $conteudo;
+				
 				
 				
 			} catch (Exception $e) {
@@ -32,12 +34,12 @@ class LoginController
 					$user->setEmailUser($_POST['emailUsers']);
 					$user->setPasswordUser($_POST['senhaUsers']);
 					$user->validateLogin();
-	
-					header('Location: http://localhost/PROJS/VIDEO_AULAS/AULAS/6_SistemaLogin/dashboard');
+					 header('Location: http://localhost:8000/?pagina=Home');
 				} catch (\Exception $e) {
 					$_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
 	
-					header('Location: http://localhost/PROJS/VIDEO_AULAS/AULAS/6_SistemaLogin/');
+					header('Location:http://localhost:8000/Login');
+					echo "deuerro";
 				}
 				
 	}

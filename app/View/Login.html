@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app\css\Login.css">
+    <link rel="stylesheet" href="app/css/Login.css">
     <link rel="stylesheet" href="app/css/Estrutura.css">
 
      <script src="https://kit.fontawesome.com/4e34a236af.js" crossorigin="anonymous"></script>
@@ -13,13 +13,9 @@
     <title>Login ASSIN</title>
     
     </head>
-    <header>
-      <p id="titulo-principal">
-        ASSESSORIA PARA ASSUNTOS INTERNACIONAIS - ASSIN
-      </p>
-    </header>
+  
 <body>
-  <section class="vh-100">
+  <section class="form-login">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-9 col-lg-6 col-xl-5">
@@ -27,21 +23,21 @@
             class="img-fluid" alt="Sample image">
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form method="post" action="">
+          <form method="post" action="?pagina=Login&metodo=check">
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0">Fazer login no sistema</p>
             </div>
   
             <!-- Email input -->
             <div class="form-outline mb-4">
-              <input type="email" id="form3Example3" name="emailUsers" class="form-control form-control-lg" />
-              <label class="form-label" for="form3Example3">Endereço de Email</label>
+              <input type="email" id="emailUsers" name="emailUsers" class="form-control form-control-lg" />
+              <label class="form-label" for="emailUsers">Endereço de Email</label>
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-3">
-              <input type="password" name="senhaUsers" id="form3Example4" class="form-control form-control-lg"/>
-              <label class="form-label" for="form3Example4">Senha</label>
+              <input type="password" name="senhaUsers" class="form-control form-control-lg"/>
+              <label class="form-label" for="senhaUsers">Senha</label>
             </div>
   
             <div class="d-flex justify-content-between align-items-center">
@@ -55,32 +51,22 @@
               <a href="#!" class="text-body">Esqueceu a senha?</a>
             </div>
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg"
+              <button type="submit" class="btn btn-primary btn-lg"
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Entrar</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-    <div class="footer-login">
-
-    
-    <div
-      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: #990100 !important;">
-      <!-- Copyright -->
-      <div class="text-white mb-3 mb-md-0">
-        Copyright © 2022. Todos os direitos reservados.
-      </div>
-      <!-- Copyright -->
-    </div>
-  </div>
+   
   </section>
-  <script src="js\front.js"></script>
+  <script src="/app/js/front.js"></script>
    
     
   <!-- JavaScript Bundle with Popper -->
-  <script src="app\js\bootstrap.bundle.min.js"></script>
-  <script src="app\js\jquery-3.6.0.js"></script>    
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    </script> 
   </script>
   
 </body>

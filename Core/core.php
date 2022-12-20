@@ -2,13 +2,11 @@
 
 class Core
 	{
-		private $url;
-
+		
+		private $user;
 		private $controller;
 		private $method = 'index';
 		private $params = array();
-
-		private $user;
 
 		private $error;
 
@@ -25,72 +23,74 @@ class Core
 				}
 			}
 		}
-		public function start($request)
+	
+		public function start($urlGet)
 		{
-			if (isset($request['url'])){
-				$this->url = explode('/', $request['url']);
 
-				$this->controller = ucfirst($this->url[0]).'Controller';
-				array_shift($this->url);
+			// if (isset($urlGet['metodo'])) {
+			// 	$acao = $urlGet['metodo'];
+			// } else {
+			// 	$acao = 'index';
+			// }
 
-				if (isset($this->url[0]) && $this->url != '') {
-					$this->method = $this->url[0];
-					array_shift($this->url);
+			// if (isset($urlGet['pagina'])) {
+			// 	$controller = ucfirst($urlGet['pagina'].'Controller');
+			// } else {
+			
+			
+			// $controller = 'HomeController';
+			// }
+			
 
-					if (isset($this->url[0]) && $this->url != '') {
-						$this->params = $this->url;
+			// if (!class_exists($controller)) {
+			// 	$controller = 'ErroController';
+			// }
+
+
+			if (isset($urlGet['id']) && $urlGet['id'] != null) {
+				$id = $urlGet['id']; // pegando o id da minha url como parametro se ela nao tem parametro então id é null
+			} else {
+				$id = null;
+			}
+
+			if (isset($urlGet['pagina'])){
+			
+
+				$this->controller = ucfirst($urlGet['pagina']).'Controller';
+
+				if (isset($urlGet['metodo']) && $urlGet['metodo'] != '') {
+					$this->method = $urlGet['metodo'];
+
+					if (isset($urlGet['pagina']) && $urlGet['pagina'] != '') {
+						$this->params = $urlGet['pagina'];
 					}
 				}
 			}
-			
-			if ($this->user) {
-				$pg_permission = ['HomeController'];
+
+
+			if ($this->user) { // se o usuario estiver logado
+				$pg_permission = ['HomeController' , 'AcordosController']; // ele pode acessar essas
 
 				if (!isset($this->controller) || !in_array($this->controller, $pg_permission)) {
 					$this->controller = 'HomeController';
 					$this->method = 'index';
 				}
+				
 			} else {
 				$pg_permission = ['LoginController'];
 
-				if (!isset($this->controller) || !in_array($this->controller, $pg_permission)) {
-					$this->controller = 'LoginController';
-					$this->method = 'index';
-				}
+				// if (!isset($this->controller) || !in_array($this->controller, $pg_permission)) {
+				// 	$this->controller = 'LoginController';
+				// 	$this->method = 'index';
+				// } // VERIFICAR ISSO AQUI AMANHA
 			}
+			//return call_user_func_array(array(new $controller, $acao), array($id));
+			return call_user_func(array(new $this->controller, $this->method),  array($id));
 
-			return call_user_func(array(new $this->controller, $this->method), $this->params);
-			//var_dump($this->controller, $this->method, $this->params);
-		}
+		
 	}
-		// public function start($urlGet)
-		// {
-
-		// 	if (isset($urlGet['metodo'])) {
-		// 		$acao = $urlGet['metodo'];
-		// 	} else {
-		// 		$acao = 'index';
-		// 	}
-
-		// 	if (isset($urlGet['pagina'])) {
-		// 		$controller = ucfirst($urlGet['pagina'].'Controller');
-		// 	} else {
-		// 		$controller = 'HomeController';
-		// 	}
-			
-
-		// 	if (!class_exists($controller)) {
-		// 		$controller = 'ErroController';
-		// 	}
-
-
-		// 	if (isset($urlGet['id']) && $urlGet['id'] != null) {
-		// 		$id = $urlGet['id']; // pegando o id da minha url como parametro se ela nao tem parametro então id é null
-		// 	} else {
-		// 		$id = null;
-		// 	}
-
-		// 	call_user_func_array(array(new $controller, $acao), array($id));
+}
+		
 			
 
 			

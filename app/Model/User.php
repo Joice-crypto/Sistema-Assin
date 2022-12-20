@@ -21,10 +21,10 @@ class User {
             if ($stmt->rowCount()) {
                 $result = $stmt->fetch();
 
-                if ($result['pass'] === $this->password) {
+                if ($result['senhaUsers'] === $this->passwordUser) {
                     $_SESSION['usr'] = array(
-                        'id_user' => $result['id'], 
-                        'name_user' => $result['name']
+                        'IdUsers' => $result['id'], 
+                        'nomeUsers' => $result['name']
                     );
 
                     return true;

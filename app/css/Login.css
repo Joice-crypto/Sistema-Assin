@@ -1,17 +1,4 @@
-*{
-    padding: 0%;
-    margin: 0%;
-}
-*/
- body { overflow-x: hidden; 
-  min-height: 100vh;
-  width: 100vw;
-  padding: 0;
-  margin: 0;
-  min-height: 100%;
-  text-decoration: none;
 
-}
 .divider:after,
 .divider:before {
 content: "";
@@ -28,27 +15,15 @@ height: 100%;
 }
 }
 
-header {
-    background-color:#990100 !important;
-    display: flex;
-    height: 100px;
-    position:fixed;
-    width: 100%;
-    z-index: 10;
-  }
-  
-  header p {
-    color: #ffff;
-    align-items: center;
-    margin: 30px;
-    padding-left: 35%;
-    font-family: 'Zilla Slab', serif;
-    font-weight: bolder;
-  }
+body { overflow-x: hidden; 
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+  text-decoration: none;
 
-.footer-login{ 
-    width: 100%;
-    display: block;
-    bottom:0;
-    position:absolute;
+}
+.form-login{
+  margin-top: 115px;
 }
