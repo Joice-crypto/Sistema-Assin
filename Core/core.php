@@ -42,8 +42,8 @@ class Core
 			// }
 			
 
-			// if (!class_exists($controller)) {
-			// 	$controller = 'ErroController';
+			// if (!class_exists($this->controller)) {
+			// 	$this->controller = 'ErroController';
 			// }
 
 
@@ -79,12 +79,12 @@ class Core
 			} else {
 				$pg_permission = ['LoginController'];
 
-				// if (!isset($this->controller) || !in_array($this->controller, $pg_permission)) {
-				// 	$this->controller = 'LoginController';
-				// 	$this->method = 'index';
-				// } // VERIFICAR ISSO AQUI AMANHA
+			//  if (!isset($this->controller) || !in_array($this->controller, $pg_permission)) {
+			// 	 	$this->controller = 'LoginController';
+			// 	 	$this->method = 'index';
+			// 	 } // se não estiver logado ele so pode ficar no index de login
 			}
-			//return call_user_func_array(array(new $controller, $acao), array($id));
+			
 			return call_user_func(array(new $this->controller, $this->method),  array($id));
 
 		

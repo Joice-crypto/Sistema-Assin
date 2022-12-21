@@ -5,23 +5,16 @@
 		public function index() // pagina que vai aparecer todos os meus acordos
 		{
 			try {
-				
-
 				$loader = new \Twig\Loader\FilesystemLoader('app/View/');
-				$twig = new \Twig\Environment($loader, [
-					'cache' => '/path/to/compilation_cache',
-					'auto_reload' => true,
-				]);
+				$twig = new \Twig\Environment($loader);
 				$template = $twig->load('Acordos.html'); // vai carregar a pagina de acordos da view
 				$colecAgreements = Acordos::getAllAgreements();
 				$parametros = array();
 
 				$parametros['Acordos'] = $colecAgreements; // estou mandando os acordos para a coleção de Acortodos para recuperar na view
 
-				return $template->render($parametros);
-				
-
-				
+				$conteudo = $template->render();
+				echo $conteudo;
 				
 			} catch (Exception $e) {
 				echo $e->getMessage();

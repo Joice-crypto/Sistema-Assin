@@ -24,7 +24,7 @@ class User {
                 if ($result['senhaUsers'] === $this->passwordUser) {
                     $_SESSION['usr'] = array(
                         'IdUsers' => $result['id'], 
-                        'nomeUsers' => $result['name']
+                        'emailUsers' => $result['email']
                     );
 
                     return true;
@@ -32,6 +32,33 @@ class User {
             }
 
             throw new \Exception('Login Inválido');
+        }
+
+        
+
+        public static function insert($dadosPost){
+
+            if (empty($dadosPost['nomeUsers']) or empty($dadosPost['emailUsers']) or empty($dadosPost['senhaUsers'])){
+                { 
+                    throw new Exception("Preencha todos os campos");
+    
+                    return false;
+                }
+
+            }
+            $con = Connection::getConn();
+            $sql = $con->prepare('INSERT INTO users (nomeUsers,emailUsers,senhaUsers)values(:nomeUsers,:emailUsers,:senhaUsers)');
+            $sql->bindValue(':nomeUsers', $dadosPost['nomeUsers'], PDO::PARAM_STR);
+            $sql->bindValue(':emailUsers', $dadosPost['emailUsers'], PDO::PARAM_STR);
+            $sql->bindValue(':senhaUsers', md5($dadosPost['senhaUsers']), PDO::PARAM_STR);
+            $res = $sql->execute();
+            if ($res == 0) {
+				throw new Exception("Falha ao inserir usuario");
+
+				return false;
+			}
+
+			return true;
         }
         public function setEmailUser($emailUser)
         {

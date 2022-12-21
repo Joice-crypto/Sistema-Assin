@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/app/css/forms.css" rel="stylesheet">
+    <title>Sistema Assin</title>
+</head>
+<body>
+    <section id="container">
+        <p> Editar Usuario  {{NomeInstituicao}}</p>
+    
+        <form method="post" action="?pagina=User&metodo=Update">
+    
+            <div class="row">
+     
+            <div class="row">
+               
+                <div class="col">
+                    <label for="Nome"> Nome do Usuario</label>
+                    <input type="Pais"  class="form-control" value="{{nomeUsers}}">       
+                </div>
+            
+                <div class="col">
+                    <label for="Pais">Email</label>
+                    <input type="Pais"  class="form-control" value="{{emailUsers}}">
+                </div>
+            
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="endereco">Mudar senha?</label>
+                    
+                </div>
+                   
+                <div class="butao">
+                  
+                    <button type="submit" class="btn btn-primary"> Alterar </button> 
+                </div>
+            </div>
+    
+        </form>
+    
+    </section>
+  
+<script src="app\js\front.js"></script>
+<script src="app\js\bootstrap.bundle.min.js"></script>
+<script src="app\js\jquery-3.6.0.js"></script>  
+</body>
+</html>

@@ -39,7 +39,7 @@ class LoginController
 					$_SESSION['msg_error'] = array('msg' => $e->getMessage(), 'count' => 0);
 	
 					header('Location:http://localhost:8000/Login');
-					echo "deuerro";
+					
 				}
 				
 	}

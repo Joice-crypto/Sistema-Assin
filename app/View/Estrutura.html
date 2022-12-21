@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app/css/Login.css">
-    <link rel="stylesheet" href="app/css/Estrutura.css">
+    <link rel="stylesheet" href="/app/css/Login.css">
+    <link rel="stylesheet" href="/app/css/Estrutura.css">
 
      <script src="https://kit.fontawesome.com/4e34a236af.js" crossorigin="anonymous"></script>
      <link rel="stylesheet" href="/app/css/bootstrap.min.css" />
@@ -46,7 +46,8 @@
             </a>
              <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="?pagina=Login">Entrar</a></li>
-              <li><a class="dropdown-item" href="#">Editar usuario</a></li>
+              <li><a class="dropdown-item" href="?pagina=User&metodo=edit">Editar usuario</a></li>
+              <li><a class="dropdown-item" href="#">Sair</a></li>
              
             </ul>
           </li>
@@ -86,7 +87,7 @@
             Inicio
           </button></a>
         </li>
-        <li class="mb-1">
+        <li class="mb-1"><a class="text-muted" href="/?pagina=User&metodo=create">
           <button
             class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
             style="color: #ffff"
@@ -95,7 +96,7 @@
             aria-expanded="false"
           >
             Cadastrar usuario
-          </button>
+          </button></a>
         </li>
 
         <li class="mb-1">
@@ -176,16 +177,14 @@
                   href=""
                   id="MobInProfessor"
                   class="link-light d-inline-flex text-decoration-none rounded"
-                  >Mobilidade in - Professores/Tecnicos</a
-                >
+                  >Mobilidade in - Professores/Tecnicos</a>
               </li>
               <li>
                 <a
                   href="?pagina=AdminAcordos&metodo=create"
                   id="AcordoInter"
                   class="link-light  d-inline-flex text-decoration-none rounded"
-                  >Acordos Internacionais</a
-                >
+                  >Acordos Internacionais</a>
               </li>
             </ul>
           </div>
@@ -210,9 +209,6 @@
 
       
     </div>
-
-
-
 
     <!-- <script src="/js/front.js"></script> -->
     <script src="/app/js/front.js"></script>

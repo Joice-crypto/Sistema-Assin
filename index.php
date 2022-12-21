@@ -6,6 +6,7 @@ require_once 'app/Controller/AdminMobOutController.php';
 require_once 'app/Controller/ErrorController.php';
 require_once 'app/Controller/AcordosController.php';
 require_once 'app/Controller/AdminAcordosController.php';
+require_once 'app/Controller/UserContoller.php';
 require_once 'app/Controller/HomeController.php';
 require_once 'app/Controller/LoginController.php'; 
 require_once 'app/Model/AcordosInternacionais.php';
@@ -25,12 +26,12 @@ $template = file_get_contents('app/View/Estrutura.html');
 $template2 = file_get_contents('app/View/footer.html');
 
 
-        ob_start();
+ob_start();
         $core = new Core;
         $core->start($_GET);
 
         $saida = ob_get_contents();
-        ob_end_clean();
+ob_end_clean();
 
         $tplPronto = str_replace('{{area_dinamica}}', $saida, $template);
         echo $tplPronto;
